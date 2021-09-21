@@ -172,12 +172,13 @@ a:hover {
 }
 
 .form-field input {
-  width: 250px;
+  width: 25vw;
   padding: 12px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: rgba(0,0,0,0.1)
 }
 
 #form-field-check{
@@ -311,12 +312,18 @@ hr {
     'top top'
     'left right';
     width: 70%;
-    margin: auto
+    margin: auto auto 10px auto
   }
 
-  #reserva-tit {grid-area: top; margin:auto}
-  #form {grid-area: left}
-  #horario {grid-area: right}
+  #reserva-tit {grid-area: top; margin:auto auto 10px auto}
+  #form {grid-area: left; width: 30vw}
+  #horario {grid-area: right; width: 30vw; margin:auto}
 
+  .localizacion p {
+    line-height: 22px
+  }
 
+  .iconos {
+    margin: 10px auto auto auto;
+  }
 }
