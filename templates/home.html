@@ -7,7 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<section class="sect", id="sect_titulo">
+  <section id="idiomas" class="botones">
+    <button id="esp" class="boton-idioma" type="button" name="español" onclick="languageChange('es')">Español</button>
+    <button id="eng" class="boton-idioma" type="button" name="english" onclick="languageChange('en')">English</button>
+    <button id="fra" class="boton-idioma" type="button" name="español" onclick="">Français</button>
+    <button id="ita" class="boton-idioma" type="button" name="español" onclick="">Italiano</button>
+    <button id="rom" class="boton-idioma" type="button" name="español" onclick="">Română</button>
+  </section>
+	<section class="sect heidi", id="sect_titulo">
 		<h1>Il Piccolino Della Farfalla</h1>
     <nav id="botones-tit" class="botones">
       <button type="button" id="reservarb" onclick="goToReservar()">Reservar</button>
@@ -15,82 +22,83 @@
       <button type="button" id="cartasinb" onclick="goToSinGluten()">Sin Gluten</button>
     </nav>
   </section>
-  <section class="sect">
+  <section class="sect heidi">
     <article id="sect_somos">
       <h2 class="grid-item-somos1" id="somos-tit">Quiénes Somos</h2>
       <div class="grid-item-somos2" id="somos-text">
-        <p>Il Piccolino della Farfalla es un pequeño restaurante italiano-argentino en pleno barrio de las letras.</p>
-  			<p>Nos gusta consideramos un restaurante peculiar, ya que mezcla la cocina italiana con la argentina.
+        <p id="text1">Il Piccolino della Farfalla es un pequeño restaurante italiano-argentino en pleno barrio de las letras.</p>
+  			<p id="text2">Nos gusta consideramos un restaurante peculiar, ya que mezclamos la cocina italiana con la argentina.
   				Por esto, tenemos una gran variedad culinaria, desde pizzas hasta papas
   				rellenas o empanadas.</p>
       </div>
       <img id="entrada" class="grid-item-somos3" src="../static/images/entrada.png" alt="Entrada de La Farfalla">
     </article>
   </section>
-  <section id="carta-s" class="grid-carta sect">
+  <section id="carta-s" class="grid-carta sect heidi">
     <h2 id="grid-item-cartat">Qué comer</h2>
     <div id="carta">
       <article class="carta-item" id="grid-item-carta0">
         <a nohref onclick="goToSinGluten()" id="glut"><img src="../static/images/gluten.png" alt="sin gluten" class="img-clickable"></a>
-        <p2>Sin Gluten</p2><br>
+        <p2 id="sing">Sin Gluten</p2>
+        <p2 id="celiacos">ACSG</p2>
       </article>
       <article class="carta-item" id="grid-item-carta1">
         <a href="carta.html#entrantes" id="appet"><img src="../static/images/appetizer.png" alt="entrantes" class="img-clickable"></a>
-        <p2>Entrantes y<br>Ensaladas</p2>
+        <p2 id="ens">Entrantes y<br>Ensaladas</p2>
       </article>
       <article class="carta-item" id="grid-item-carta2">
         <a href="carta.html#pastas" id="ensl"><img src="../static/images/ensalada.png" alt="ensaladas" class="img-clickable"></a>
-        <p2>Vegetarianos<br>y Pastas</p2>
+        <p2 id="veg">Vegetarianos<br>y Pastas</p2>
       </article>
       <article class="carta-item" id="grid-item-carta3">
         <a href="carta.html#pizzas"><img src="../static/images/pizza.png" alt="pizzas" class="img-clickable"></a>
-        <p2>Pizzas</p2><br>
+        <p2 id="pi">Pizzas</p2><br>
       </article>
       <article class="carta-item" id="grid-item-carta4">
         <a href="carta.html#carnes"><img src="../static/images/turkey.png" alt="carnes" class="img-clickable"></a>
-        <p2>Carnes</p2><br>
+        <p2 id="car">Carnes</p2><br>
       </article>
       <article class="carta-item" id="grid-item-carta5">
         <a href="carta.html#postres"><img src="../static/images/ice-cream.png" alt="postres" class="img-clickable"></a>
-        <p2>Postres</p2><br>
+        <p2 id="post">Postres</p2><br>
       </article>
     </div>
   </section>
-  <section class="sect">
+  <section class="sect heidi">
     <div id="reserva-sect">
       <h2 class="grid-item1" id="reserva-tit">Reservar por internet</h2>
       <article class="grid-item2" id="form">
         <form id="form-reserva">
           <fieldset class="form-field">
-            <label>Nombre</label>
+            <label id="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre1">
             <p3 class="error" id="no-nombre">* este campo es obligatorio</p3>
             <p3 class="error" id="mal-nombre">* nombre invalido</p3>
           </fieldset>
           <fieldset class="form-field">
-            <label>Teléfono</label>
+            <label id="tellab">Teléfono</label>
             <input type="tel" name="tel" id="tel1">
             <p3 class="error" id="no-tel">* este campo es obligatorio</p3>
             <p3 class="error" id="mal-tel">* teléfono invalido, debe ser un número español sin prefijo</p3>
           </fieldset>
           <fieldset class="form-field">
-            <label>Fecha</label>
+            <label id="fechalab">Fecha</label>
             <input type="date" name="fecha" id="fecha1">
             <p3 class="error" id="no-fecha">* este campo es obligatorio</p3>
           </fieldset>
           <fieldset class="form-field">
-            <label>Hora</label>
+            <label id="horalab">Hora</label>
             <input type="time" name="hora" id="hora1" value=13:00>
             <p3 class="error" id="no-hora">* este campo es obligatorio</p3>
             <p3 class="error" id="mal-hora">* hora fuera de horario, tenga en cuenta que debe llegar mínimo 45 minutos antes del cierre</p3>
           </fieldset>
           <fieldset class="form-field">
-            <label>Personas</label>
+            <label id="personaslab">Personas</label>
             <input type="number" name="personas" id="persona1" value=1 min=1 max= 30>
           </fieldset>
           <fieldset id="form-field-check">
             <input type="checkbox" name="politica" id="checkbox">
-            <label>acepto y estoy de acuerdo con nuestra <a href="privacidad.html" id="privacidad">política de privacidad</a></label>
+            <label id="acept">acepto y estoy de acuerdo con nuestra <a href="privacidad.html" id="privacidad">política de privacidad</a></label>
             <p3 class="error" id="no-politica">* es obligatorio aceptar nuestra política de privacidad</p3>
           </fieldset>
           <button type="button" id="submit1" name="submit1" onclick="sendSpread(e);">Reservar</button>
@@ -98,20 +106,20 @@
       </article>
       <article class="grid-item3" id="horario">
         <div id="horario-in">
-          <h3 id=horario-titulo>Horario</h3>
-          <h4>Lunes a jueves</h4>
+          <h3 id="horario-titulo">Horario</h3>
+          <h4 id="lun-jue">Lunes a jueves</h4>
           <p>13:00 - 16:30<br>19:30 - 2:30</p>
-          <h4>Viernes, Sábado, Domingo y Festivos</h4>
+          <h4 id="findes">Viernes, Sábado, Domingo y Festivos</h4>
           <p>13:00 - 2:30</p>
           <br>
           <article class="grid-horario">
             <div class="grid-item-horario1">
-              <h4>Llámenos al: </h4>
-              <a id="tel-llamar" href="tel:+34913694391">913 69 43 91</a>
+                <h4 id="call">Llámenos al: </h4>
+              <a class="tel" href="tel:+34913694391">913 69 43 91</a>
             </div>
             <div class="grid-item-horario2">
-              <h4>O escríbanos a: </h4>
-              <a id="tel-llamar" href="mailto:farfallamadrid2@email.com">farfallamadrid2@email.com</a>
+              <h4 id="emaill">O escríbanos a: </h4>
+              <a class="tel" href="mailto:farfallamadrid2@gmail.com">farfallamadrid2@gmail.com</a>
             </div>
           </article>
         </div>
@@ -119,8 +127,8 @@
     </div>
   </section>
   <footer>
-    <div class="localizacion">
-      <h3>Localización</h3>
+    <div class="localizacion heidi">
+      <h3 id="local">Localización</h3>
       <hr>
       <p>Restaurante Il Piccolino della Farfalla</p>
       <p>Calle Huertas, 6</p>
@@ -129,7 +137,7 @@
         <a href="https://www.facebook.com/La-Farfalla-Il-Picolino-142563812951591/" class="icon"><img src="../static/images/facebook.png" alt=""></a>
         <a href="#" class="icon"><img src="../static/images/instagram.png" alt=""></a>
       </div>
-      <a class="priv-final" href="privacidad.html">política de privacidad</a>
+      <a id="priva-fn" class="priv-final" href="privacidad.html">política de privacidad</a>
     </div>
   </footer>
 </body>

@@ -1,4 +1,21 @@
 console.log(screen.height, screen.width);
+var lang;
+
+function hideLanguage() {
+	document.getElementById("idiomas").style.display = "none";
+	var elements = document.getElementsByClassName("heidi");
+
+	while (elements.length > 0) {
+		elements[0].classList.remove("heidi");
+	}
+}
+
+function languageChange(lang) {
+	hideLanguage();
+	var data = fetch("./languages/" + lang + ".json");
+	console.log(data);
+
+}
 
 function goToReservar(){
 	var reservas = document.getElementById("reserva-tit");
@@ -51,7 +68,7 @@ function sendSpread(e) {
   var $form = document.getElementById('formreservar');
 
   let reName = new RegExp("^[a-zA-Z ]{2,30}$");
-  let reTel = new RegExp("^[6-7][0-9]{8}$");
+  let reTel = new RegExp("^[0-9]{0,18}$");
   var nombre = 0;
   var tel = 0;
   var fecha = 0;
@@ -145,10 +162,9 @@ function sendSpread(e) {
 
   if (nombre == 1 && tel == 1 && fecha == 1 && hora == 1 && check == 1) {
     var jqxhr = $.ajax({
-      url: "email.php",
+      url: "http://127.0.0.1:3000/static/mail_handler.php",
       type: "POST",
       mode: "no-cors",
-      dataType: "json",
       data: {nombre: nombreForm.value,
             tel: telForm.value,
             fecha: fechaForm.value,

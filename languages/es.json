@@ -1,0 +1,31 @@
+{
+"reservarb": "Reservar";
+"cartab": "Carta";
+"cartasinb": "Sin Gluten",
+"somos-tit": "Quiénes Somos",
+"text1": "Il Piccolino della Farfalla es un pequeño restaurante italiano-argentino en pleno barrio de las letras.",
+"text2": "Nos gusta consideramos un restaurante peculiar, ya que mezclamos la cocina italiana con la argentina. Por esto, tenemos una gran variedad culinaria, desde pizzas hasta papas rellenas o empanadas."
+"grid-item-cartat": "Qué Comer",
+"sing": "Sin Gluten",
+"ens": "Entrantes y<br>Ensaladas",
+"veg": "Vegetarianos<br>y Pastas",
+"pi": "Pizzas",
+"car": "Carnes",
+"post": "Postres",
+"reserva-tit": "Reservar por Internet",
+"nombre": "Nombre",
+"tellab": "Teléfono",
+"fechalab": "Fecha",
+"horalab": "Hora",
+"personaslab": "Personas",
+"acept": "acepto y estoy de acuerdo con nuestra <a href="privacidad.html" id="privacidad">política de privacidad</a>",
+"horario-titulo": "Horario",
+"lun-jue": "Lunes a Jueves",
+"findes": "Viernes, Sábado, Domingo y Festivos",
+"call": "Llámenos al: ",
+"emaill": "O escríbanos a: ",
+"local": "Localización",
+"priva-fn": "política de privacidad"
+
+
+}

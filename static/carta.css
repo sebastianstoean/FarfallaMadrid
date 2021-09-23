@@ -48,6 +48,12 @@ h3 {
   line-height: 100px;
 }
 
+h4 {
+  font-size: 32px;
+  font-family: "FontFarfMin" !important;
+  margin-bottom: 10px
+}
+
 h1 {
   font-size: 32px;
   line-height: 40px;
@@ -70,6 +76,15 @@ h2 {
 #NCS {
   font-size: 80px;
   line-height: 80px;
+  padding-bottom: 25px
+}
+
+#ACSG {
+  font-family:FontFarfMin;
+  font-size: 30px;
+  line-height: 40px;
+  color: #A50D2F;
+  background-color: rgba(255,255,255,0.5)
 }
 
 img {
@@ -107,6 +122,10 @@ h4 {
   margin-bottom: 20px
 }
 
+footer {
+  clear: both;
+}
+
 .localizacion {
   background-color: rgba(0,0,0,0.75);
   color: white;
@@ -114,45 +133,19 @@ h4 {
   text-align: center;
 }
 
+hr {
+  margin-bottom: 5px;
+}
+
 .localizacion p {
   font-size: 16px;
-  line-height: 28px;
+  text-align: center !important;
+  line-height: 16px
 }
 
-.localizacion h3 {
-  font-size: 32px;
-  text-align: center;
-  font-family: "FontFarfMin";
-  line-height: 48px;
-}
-
-.iconos {
-  margin-bottom: 5px;
-  display: flex
-}
-
-.icon {
-  margin: 0px 5px;
-  width: 24px
-}
-
-.icon img {
-  width: 24px
-}
-
-#face {
-  padding-right: 4px
-}
-
-.priv-final {
-  font-size: 12px;
-  text-decoration: none;
+.localizacion a {
   color: white;
-}
-
-.priv-final:visited {
-  color: white;
-  text-decoration: none
+  font-size: 12px
 }
 
 @media only screen and (max-device-height: 720px) {
@@ -162,7 +155,7 @@ h4 {
   }
 }
 
-@media only screen and (min-device-width: 1100px) {
+@media only screen and (min-device-width: 768px) {
   * {
     font-size: 26px;
     line-height: 32px;
@@ -197,6 +190,12 @@ h4 {
     width: 500px;
     display: block;
     margin: 20px auto 0px
+  }
+
+  #ACSG {
+    width: 40vw;
+    margin: auto;
+    padding: 5px 30vw;
   }
 
   .menu-salsa {

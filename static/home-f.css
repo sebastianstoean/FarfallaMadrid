@@ -45,6 +45,8 @@ h2 {
 
 h3 {
   font-size: 32px;
+  font-family: "FontFarfMin";
+  margin-bottom: 10px
 }
 
 p2 {
@@ -61,6 +63,17 @@ a {
 
 a:hover {
   cursor: pointer;
+}
+
+#idiomas {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.boton-idioma {
+  margin:auto
 }
 
 #sect_titulo {
@@ -124,6 +137,9 @@ a:hover {
 .sect {
   margin-top: 20px;
   background-color: rgba(0,0,0,0.05);
+}
+
+#sect_somos {
   display: flex;
   flex-direction: column;
 }
@@ -135,12 +151,13 @@ a:hover {
 
 #entrada {
   width: 90vw;
-  margin: auto auto 20px auto;
+  margin: auto auto 20px;
 }
 
 .carta-item {
   display: flex;
   flex-direction: column;
+  margin: auto
 }
 
 .carta-item a {
@@ -149,6 +166,11 @@ a:hover {
 
 .img-clickable {
   width: 25vw;
+}
+
+#celiacos {
+  color: #A50D2F;
+  font-weight: bold;
 }
 
 #reserva-sect {
@@ -172,7 +194,7 @@ a:hover {
 }
 
 .form-field input {
-  width: 25vw;
+  width: 250px;
   padding: 12px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
@@ -252,6 +274,11 @@ a:hover {
   color: white;
 }
 
+.tel {
+  font-family: FontNumbers;
+  font-weight: lighter
+}
+
 footer {
   clear: both;
 }
@@ -264,13 +291,17 @@ footer {
 }
 
 hr {
-  margin: 10px 0px 5px;
+  margin-bottom: 5px;
 }
 
 .localizacion p {
   font-size: 16px;
   text-align: center !important;
-  line-height: 16px
+  line-height: 20px
+}
+
+.iconos {
+  margin-top: 10px
 }
 
 .localizacion a {
@@ -278,20 +309,19 @@ hr {
   font-size: 12px
 }
 
+.heidi {
+  display: none !important;
+}
+
 @media only screen and (min-width:768px) {
   #sect_somos {
-    display: grid;
-    grid-template-areas:
-    'top top'
-    'left right';
     width: 70%;
     margin: auto;
-    grid-column-gap: 40px
+    gap: 40px
   }
 
-  #somos-tit {grid-area: top; margin: auto;}
-  #somos-text {grid-area: left; text-align: left !important;}
-  #entrada {grid-area: right; width: 30vw; margin:auto}
+  #somos-tit {margin: auto;}
+  #entrada {width: 50vw;}
 
   #carta {
     margin: auto;
@@ -302,8 +332,40 @@ hr {
     padding-bottom: 15px
   }
 
+  #form {width: 50vw;  margin: 10px auto}
+  #horario {width: 50vw; margin:auto}
+
+  .form-field input {
+    width: 40vw
+  }
+
   .img-clickable {
     width: 7.5vw;
+  }
+
+  .localizacion p {
+    line-height: 22px
+  }
+
+  .iconos {
+    margin: 10px auto auto auto;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #sect_somos {
+    display: grid;
+    grid-template-areas:
+    'top top'
+    'left right';
+  }
+
+  #somos-tit {grid-area: top; margin:auto}
+  #somos-text {grid-area: left; margin:auto}
+  #entrada {grid-area: right; margin:auto auto 20px auto; width: 35vw}
+
+  #carta {
+    width: 90%
   }
 
   #reserva-sect {
@@ -319,11 +381,11 @@ hr {
   #form {grid-area: left; width: 30vw}
   #horario {grid-area: right; width: 30vw; margin:auto}
 
-  .localizacion p {
-    line-height: 22px
+  .form-field input {
+    width: 25vw
   }
 
-  .iconos {
-    margin: 10px auto auto auto;
+  .error {
+    font-size: 15px
   }
 }
