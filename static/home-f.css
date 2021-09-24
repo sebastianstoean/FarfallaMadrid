@@ -40,7 +40,7 @@ h2 {
   text-align: center;
   font-weight: 200;
   font-family: "FontFarfMin";
-  padding: 6px 0px;
+  padding-top: 20px;
 }
 
 h3 {
@@ -72,6 +72,10 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.es, .en {
+  display: none;
+}
+
 .boton-idioma {
   margin:auto
 }
@@ -91,15 +95,13 @@ a:hover {
   background: rgba(255, 255, 255, 0.15);
   align-items: center;
   width: 100%;
-  display: grid;
-  grid-template-areas:
-  'top top'
-  'left right';
-  grid-row-gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   padding: 20px 0px
 }
 
-.botones button, button a {
+.botones button p, button a {
   font-size: 30;
   font-family: "FontFarfMin";
   color: rgba(0, 0, 0, 0.75);
@@ -113,7 +115,7 @@ a:hover {
   border-radius: 3px;
   padding-top: 12px;
   padding-bottom: 12px;
-  width: 150px;
+  width: 200px;
 }
 
 .botones button:hover {
@@ -121,13 +123,11 @@ a:hover {
 }
 
 #reservarb {
-  grid-area: top;
   margin: auto;
 }
 
 #cartab {
   margin: auto;
-  margin-right: 5px;
 }
 
 #cartasinb {
@@ -211,6 +211,10 @@ a:hover {
   width: 250px;
 }
 
+#reserva-sect a {
+  text-decoration: underline
+}
+
 #checkbox {
   margin: auto;
   height: 20px;
@@ -225,7 +229,7 @@ a:hover {
   background-color: rgba(0,0,0,0.75);
 }
 
-#form-field-check label, #form-field-check a {
+#form-field-check label p, #form-field-check a {
   font-size: 12px;
   line-height: 12px;
 }
@@ -274,6 +278,12 @@ a:hover {
   color: white;
 }
 
+#horario-in hr {
+  margin: 10px auto;
+  color: orange;
+  width: 20vw;
+}
+
 .tel {
   font-family: FontNumbers;
   font-weight: lighter
@@ -314,6 +324,21 @@ hr {
 }
 
 @media only screen and (min-width:768px) {
+  #botones-tit {
+    display: grid;
+    grid-template-areas:
+    'top top'
+    'left right';
+  }
+
+  #reservarb {
+    grid-area: top;
+    margin: auto
+  }
+
+  #cartab {margin: auto 5px auto auto};
+  #cartasinb {margin: auto}
+
   #sect_somos {
     width: 70%;
     margin: auto;
@@ -323,7 +348,8 @@ hr {
   #somos-tit {margin: auto;}
   #entrada {width: 50vw;}
 
-  #carta {
+  #cart
+  {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -332,8 +358,16 @@ hr {
     padding-bottom: 15px
   }
 
+  .up-text {
+    margin-bottom: 22px
+  }
+
   #form {width: 50vw;  margin: 10px auto}
   #horario {width: 50vw; margin:auto}
+
+  #horario-in hr {
+    width: 10vw;
+  }
 
   .form-field input {
     width: 40vw
@@ -365,7 +399,11 @@ hr {
   #entrada {grid-area: right; margin:auto auto 20px auto; width: 35vw}
 
   #carta {
-    width: 90%
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 20px 0px
   }
 
   #reserva-sect {

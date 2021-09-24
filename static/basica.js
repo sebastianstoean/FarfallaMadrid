@@ -11,9 +11,12 @@ function hideLanguage() {
 }
 
 function languageChange(lang) {
+	var elements = document.getElementsByClassName(lang);
+	for(var i=0; i<elements.length; i++){
+		elements[i].style.display = "block";
+	}
+
 	hideLanguage();
-	var data = fetch("./languages/" + lang + ".json");
-	console.log(data);
 
 }
 
@@ -23,7 +26,7 @@ function goToReservar(){
 }
 
 function goToCarta(){
-	window.location.href = "../templates/carta.html";
+	window.location.href = "../templates/cartas.html";
 }
 
 function goToSinGluten() {
@@ -52,11 +55,39 @@ function goToPostres() {
 	window.location.href = "carta.html";
 }
 
+function doAjax() {
+	var jqxhr = $.ajax({
+		url: "../static/mail_handler.php",
+		type: "POST",
+		mode: "no-cors",
+		data: {nombre: nombreForm.value,
+					tel: telForm.value,
+					fecha: fechaForm.value,
+					hora: horaForm.value,
+					personas: personasForm.value,
+		},
+		success: function(){
+			alert("successs");
+		}
+	})
+}
+
+function noneFlex(a, b) {
+	document.getElementById(a).style.display = "flex";
+	document.getElementById(b).style.display = "none";
+}
+
+function noneNone(a, b, c){
+  document.getElementById(a).style.display = "none";
+  document.getElementById(b).style.display = "none";
+	c = 1;
+}
+
 var today = new Date().toISOString().split('T')[0];
 document.getElementsByName("fecha")[0].setAttribute('min', today);
 
 var e = new Event("look", {"cancelable":true})
-function sendSpread(e) {
+$("#submit1").click(function(e) {
 	e.preventDefault();
   var nombreForm = (document.getElementById("nombre1"));
   var telForm = (document.getElementById("tel1"));
@@ -77,31 +108,23 @@ function sendSpread(e) {
 
 	var arrayMatches = nombreForm.value.match(reName);
   if (nombreForm.value == "") {
-    document.getElementById("no-nombre").style.display = "flex";
-    document.getElementById("mal-nombre").style.display = "none";
+		noneFlex("no-nombre", "mal-nombre");
   }
   else if (arrayMatches == null) {
-    document.getElementById("mal-nombre").style.display = "flex";
-    document.getElementById("no-nombre").style.display = "none";
+		noneFlex("mal-nombre", "no-nombre");
   }
   else {
-    document.getElementById("no-nombre").style.display = "none";
-    document.getElementById("mal-nombre").style.display = "none";
-    nombre = 1;
+		noneNone("no-nombre", "mal-nombre", nombre);
   }
 
   if (telForm.value == "") {
-    document.getElementById("no-tel").style.display = "flex";
-    document.getElementById("mal-tel").style.display = "none";
+		noneFlex("no-tel", "mal-tel");
   }
   else if (!telForm.value.match(reTel)) {
-    document.getElementById("no-tel").style.display = "none";
-    document.getElementById("mal-tel").style.display = "flex";
+		noneFlex("mal-tel", "no-tel");
   }
   else {
-    document.getElementById("no-tel").style.display = "none";
-    document.getElementById("mal-tel").style.display = "none";
-    tel = 1;
+		noneNone("no-tel", "mal-tel", tel);
   }
 
   if (fechaForm.value == ""){
@@ -112,8 +135,7 @@ function sendSpread(e) {
     fecha = 1;
 
     if (horaForm.value == ""){
-      document.getElementById("no-hora").style.display = "flex";
-      document.getElementById("mal-hora").style.display = "none";
+			noneFlex("no-hora", "mal-hora");
     }
     else {
       var hora = horaForm.value[0];
@@ -127,26 +149,20 @@ function sendSpread(e) {
       var minNum = Number(min);
       if (dia == "Fri" || dia == "Sat" || dia == "Sun") {
         if ((hora > 1 && hora < 13 || hora == 1 && min > 45)) {
-          document.getElementById("no-hora").style.display = "none";
-          document.getElementById("mal-hora").style.display = "flex";
+				 	noneFlex("mal-hora", "no-hora");
         }
         else {
-          document.getElementById("no-hora").style.display = "none";
-          document.getElementById("mal-hora").style.display = "none";
-          hora = 1;
+					noneNone("no-hora", "mal-hora", hora);
         }
       }
       else {
         if ((horaNum > 1 && horaNum < 13) || (horaNum == 1 && minNum > 45) ||
         (horaNum > 15 && horaNum < 19) || (horaNum == 15 && minNum > 45) ||
         (horaNum == 19 && minNum < 30) ) {
-          document.getElementById("no-hora").style.display = "none";
-          document.getElementById("mal-hora").style.display = "flex";
+					noneFlex("mal-hora", "no-hora");
         }
         else {
-          document.getElementById("no-hora").style.display = "none";
-          document.getElementById("mal-hora").style.display = "none";
-          hora = 1;
+          noneNone("no-hora", "mal-hora", hora);
         }
       }
     }
@@ -161,19 +177,6 @@ function sendSpread(e) {
   }
 
   if (nombre == 1 && tel == 1 && fecha == 1 && hora == 1 && check == 1) {
-    var jqxhr = $.ajax({
-      url: "http://127.0.0.1:3000/static/mail_handler.php",
-      type: "POST",
-      mode: "no-cors",
-      data: {nombre: nombreForm.value,
-            tel: telForm.value,
-            fecha: fechaForm.value,
-            hora: horaForm.value,
-            personas: personasForm.value,
-      },
-      success: function(){
-        alert("successs");
-      }
-    })
+    doAjax();
   }
-}
+})
