@@ -1,5 +1,12 @@
 console.log(screen.height, screen.width);
-var lang;
+let language;
+
+function sleepFor(sleepDuration){
+    var now = new Date().getTime();
+    while(new Date().getTime() < now + sleepDuration){
+        /* Do nothing */
+    }
+}
 
 function hideLanguage() {
 	document.getElementById("idiomas").style.display = "none";
@@ -15,13 +22,13 @@ function languageChange(lang) {
 	for(var i=0; i<elements.length; i++){
 		elements[i].style.display = "block";
 	}
-
+	language = lang;
 	hideLanguage();
 
 }
 
 function goToReservar(){
-	var reservas = document.getElementById("reserva-tit");
+	var reservas = document.getElementById("reserva-sect");
 	reservas.scrollIntoView({behavior: 'smooth' });
 }
 
@@ -30,7 +37,9 @@ function goToCarta(){
 }
 
 function goToSinGluten() {
-	window.location.href = "singluten.html";
+	window.location.href = "../templates/cartas.html";
+	setTimeout()
+	document.getElementById('sin-gluten-boton').click();
 }
 
 function goToEntrantes() {
@@ -73,13 +82,13 @@ function doAjax() {
 }
 
 function noneFlex(a, b) {
-	document.getElementById(a).style.display = "flex";
-	document.getElementById(b).style.display = "none";
+	document.getElementById(a+"-"+language).style.display = "flex";
+	document.getElementById(b+"-"+language).style.display = "none";
 }
 
 function noneNone(a, b, c){
-  document.getElementById(a).style.display = "none";
-  document.getElementById(b).style.display = "none";
+  document.getElementById(a+"-"+language).style.display = "none";
+  document.getElementById(b+"-"+language).style.display = "none";
 	c = 1;
 }
 
@@ -128,10 +137,10 @@ $("#submit1").click(function(e) {
   }
 
   if (fechaForm.value == ""){
-    document.getElementById("no-fecha").style.display = "flex";
+    document.getElementById("no-fecha-"+language).style.display = "flex";
   }
   else {
-    document.getElementById("no-fecha").style.display = "none";
+    document.getElementById("no-fecha-"+language).style.display = "none";
     fecha = 1;
 
     if (horaForm.value == ""){
@@ -169,10 +178,10 @@ $("#submit1").click(function(e) {
   }
 
   if (!politicaForm.checked) {
-    document.getElementById("no-politica").style.display = "flex";
+    document.getElementById("no-politica-"+language).style.display = "flex";
   }
   else {
-    document.getElementById("no-politica").style.display = "none";
+    document.getElementById("no-politica-"+language).style.display = "none";
     check = 1;
   }
 

@@ -23,11 +23,13 @@ h1 {
   font-size: 100px;
   line-height: 100px;
   font-weight: 200;
-  font-family: "FontFarf";
-  margin-left: -20px;
+  font-family: "FontFarfMin";
+  margin: auto;
   padding: 20px 10px 0px;
   color: rgba(245,245,245,0.9);
   text-align: center;
+  letter-spacing: 0px;
+  font-style: italic;
 }
 
 h1:hover, h2:hover, h3:hover {
@@ -72,7 +74,7 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
-.es, .en {
+.es, .en, .ro {
   display: none;
 }
 
@@ -323,7 +325,7 @@ hr {
   display: none !important;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-device-width:768px) {
   #botones-tit {
     display: grid;
     grid-template-areas:
@@ -386,7 +388,7 @@ hr {
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-device-width: 900px) {
   #sect_somos {
     display: grid;
     grid-template-areas:

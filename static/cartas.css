@@ -159,3 +159,23 @@ hr {
   font-size: 32px;
   margin-bottom: 10px
 }
+
+@media only screen and (min-device-width: 900px) {
+  section {
+    display: grid;
+    grid-template-areas:
+    'left right';
+    background-color: rgba(0,0,0,0.05);
+    width: 90vw;
+    margin: auto;
+  }
+
+  article, img, .sect p {
+    width: 40vw;
+    margin: auto;
+  }
+
+  .sect {
+    background: none
+  }
+}
