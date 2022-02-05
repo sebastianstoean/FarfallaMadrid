@@ -1,27 +1,59 @@
 <html lang="es" dir="ltr">
 <head>
   <link rel="stylesheet" href="../static/home-f.css">
+  <link rel="stylesheet" href="../static/checkbox.css">
   <script src ="../static/jquery-3.6.0.min.js"></script>
-  <title>Farfalla</title>
+  <title>Il Piccolino della Farfalla</title>
+  <link rel="icon" href="/static/images/flaticon.ico" type = "image/x-icon">
   <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<header>
+  <nav>
+    <ul id="header-list">
+      <li>
+        <a id="home-nav" href="home.html">Home</a>
+      </li>
+      <li class="nav1">
+        <a class="es" href="cartas.html">Carta</a>
+        <a class="en" href="cartas.html">Menu</a>
+        <a class="ro" href="cartas.html">Meniu</a>
+      </li>
+      <li  class="nav1">
+        <a class="es" href="cartas.html">Carta Sin Gluten</a>
+        <a class="en" href="cartas.html">Gluten-free Menu</a>
+        <a class="ro" href="cartas.html">Meniu Fără Gluten</a>
+      </li>
+      <li>
+        <a class="es">Reservar</a>
+        <a class="en">Book a Table</a>
+        <a class="ro">Rezervare</a>
+      </li>
+      <li>
+        <a class="es">Sobre nosotros</a>
+        <a class="en">About us</a>
+        <a class="ro">Despre noi</a>
+      </li>
+    </ul>
+  </nav>
+</header>
 <body>
   <section id="idiomas" class="botones">
-    <button id="esp" class="boton-idioma" type="button" name="español" onclick="languageChange('es')">Español</button>
-    <button id="eng" class="boton-idioma" type="button" name="english" onclick="languageChange('en')">English</button>
-    <button id="fra" class="boton-idioma" type="button" name="español" onclick="">Français</button>
-    <button id="ita" class="boton-idioma" type="button" name="español" onclick="">Italiano</button>
-    <button id="rom" class="boton-idioma" type="button" name="español" onclick="languageChange('ro')">Română</button>
+    <h2 id="titulo-idioma">Il Piccolino della Farfalla</h2>
+    <div id="primeros-botones">
+      <button id="esp" class="boton-idioma" type="button" name="español" onclick="languageChange('es')">Español</button>
+      <button id="eng" class="boton-idioma" type="button" name="english" onclick="languageChange('en')">English</button>
+      <button id="fra" class="boton-idioma" type="button" name="español" onclick="">Français</button>
+      <button id="ita" class="boton-idioma" type="button" name="español" onclick="">Italiano</button>
+      <button id="rom" class="boton-idioma" type="button" name="español" onclick="languageChange('ro')">Română</button>
+    </div>
   </section>
 	<section class="sect heidi", id="sect_titulo">
-		<h1>Il Piccolino Della Farfalla</h1>
+    <h1>Il Piccolino della Farfalla</h1>
+    <h2 class="es subtitulo">Comida Italiana</h2>
+    <h2 class="en subtitulo">Italian Kitchen</h2>
+    <h2 class="ro subtitulo">Mâncare Italiană</h2>
     <nav id="botones-tit" class="botones">
-      <button type="button" id="reservarb" onclick="goToReservar()">
-        <p class="es">Reservar</p>
-        <p class="en">Book a Table</p>
-        <p class="ro">Rezervare</p>
-      </button>
 			<button type="button" id="cartab" onclick="goToCarta()">
         <p class="es">Carta</p>
         <p class="en">Menu</p>
@@ -30,28 +62,28 @@
       <button type="button" id="cartasinb" onclick="goToSinGluten()">
         <p class="es">Sin Gluten</p>
         <p class="en">Gluten-Free</p>
-        <p class="ro">Făra Gluten</p>
+        <p class="ro">Făr Gluten</p>
       </button>
     </nav>
   </section>
   <section class="sect heidi">
+    <h2 class="grid-item-somos1 es" id="somos-tit">Quiénes Somos</h2>
     <article id="sect_somos">
-      <h2 class="grid-item-somos1 es" id="somos-tit">Quiénes Somos</h2>
       <h2 class="grid-item-somos1 en" id="somos-tit">Who We Are</h2>
       <h2 class="grid-item-somos1 ro" id="somos-tit">Cine Suntem</h2>
       <div class="grid-item-somos2" id="somos-text">
-        <p class="es" id="text1">Il Piccolino della Farfalla es un pequeño restaurante italiano-argentino en pleno barrio de las letras. <br>
-          Nos gusta consideramos un restaurante peculiar, ya que mezclamos la cocina italiana con la argentina.
-  				Por esto, tenemos una gran variedad culinaria, desde pizzas hasta papas
-  				rellenas o empanadas.</p>
-        <p class="en">Il Piccolino della Farfalla is a small italian-argentinian restaurant located in the Barrio de las Letras.<br>
-        We like to think we're a quite peculiar restaurant, as we </p>
-        <p class="ro"></p>
+        <p class="es text1">Il Piccolino della Farfalla es un pequeño restaurante italiano-argentino en pleno barrio de las letras de Madrid. <br>
+          Llevamos con vosotros desde 19XX y nos gusta consideramos un restaurante peculiar, ya que nuestra cocina es una mezcla poco común de culturas.</p>
+        <p class="en text1">Il Piccolino della Farfalla is a small italian-argentinian restaurant located in the Barrio de las Letras of Madrid.<br>
+        We've been here since 19XX, and we like to think of us as a peculiar restaurant, as we have an uncommon mix of cultural dishes.</p>
+        <p class="ro text1">Il Piccolino della Farfalla este un restaurant italian și argentinian situat în Barrio de las Letras din Madrid.
+        Suntem deschiși din 19XX și ne considerăm un restaurant novedesc</p>
       </div>
       <img id="entrada" class="grid-item-somos3" src="../static/images/entrada.png" alt="Entrada de La Farfalla">
     </article>
   </section>
   <section id="carta-s" class="grid-carta sect heidi">
+    <hr class="divisor">
     <h2 class="es" id="grid-item-cartat">Qué comer</h2>
     <h2 class="en" id="grid-item-cartat">What to Eat</h2>
     <h2 class="ro" id="grid-item-cartat">Platouri</h2>
@@ -92,8 +124,23 @@
         <p2 class="ro up-text" id="post">Deserturi</p2>
       </article>
     </div>
+    <div id="diario">
+      <div id="menu-y-precio">
+        <h3 class="es diario-h">Menú diario</h3>
+        <h3 class="en diario-h">Daily Menu</h3>
+        <h3 class="ro diario-h">Meniu de zi</h3>
+        <p id="precio-menu">11,50€</p>
+      </div>
+      <div id="link-insta">
+        <p class="es seguid-insta">Síganos en <a href="#">Instagram</a> para ver el menú diario en nuestras historias</p>
+        <p class="en seguid-insta">We post our daily menu on our instastories</p>
+        <p class="ro seguid-insta"></p>
+        <a href="#" class="icon"><img src="../static/images/instagram.png" alt=""></a>
+      </div>
+    </div>
   </section>
   <section class="sect heidi">
+    <hr class="divisor">
     <div id="reserva-sect">
       <h2 class="grid-item1 es" id="reserva-tit">Reservar por internet</h2>
       <h2 class="grid-item1 en" id="reserva-tit">Book Online</h2>
@@ -162,12 +209,13 @@
             <input type="number" name="personas" id="persona1" value=1 min=1 max= 30>
           </fieldset>
           <fieldset id="form-field-check">
-            <input type="checkbox" name="politica" id="checkbox">
-            <label id="acept">
+            <label id="acept" class="control control-checkbox">
               <p class="es">acepto y estoy de acuerdo con nuestra <a href="privacidad.html es" id="privacidad">política de privacidad</a></p>
               <p class="en">I accept and agree with<br>the <a href="privacidad.html en" id="privacidad">privacy policy</a></p>
               <p class="ro">sunt de acord cu<br><a href="privacidad.html en" id="privacidad">politica de confidențialitate</a></p>
-            </label>
+                   <input type="checkbox" name="politica" id="checkbox" />
+               <div class="control_indicator"></div>
+           </label>
             <p3 class="error" id="no-politica-es">* es obligatorio aceptar nuestra política de privacidad</p3>
             <p3 class="error" id="no-politica-en">* you must accept our privacy policy</p3>
             <p3 class="error" id="no-politica-ro">* este necesar să fiți de acord cu politica de confidențialitate</p3>
@@ -198,7 +246,7 @@
             </div>
             <div class="grid-item-horario2">
               <h4 id="emaill">O escríbanos a: </h4>
-              <a class="tel" href="mailto:farfallamadrid2@gmail.com">farfallamadrid2@gmail.com</a>
+              <a class="tel" href="mailto:Piccolinofarfalla6@gmail.com">Piccolinofarfalla6@gmail.com</a>
             </div>
           </article>
         </div>
@@ -250,20 +298,31 @@
     </div>
   </section>
   <footer class="localizacion heidi">
-    <h3 class="es" id="local">Localización</h3>
-    <h3 class="en" id="local">Location</h3>
-    <h3 class="ro" id="local">Locație</h3>
-    <hr>
-    <p>Restaurante Il Piccolino della Farfalla</p>
-    <p>Calle Huertas, 6</p>
-    <p>28012 Madrid</p>
-    <div class="iconos">
-      <a href="https://www.facebook.com/La-Farfalla-Il-Picolino-142563812951591/" class="icon"><img src="../static/images/facebook.png" alt=""></a>
-      <a href="#" class="icon"><img src="../static/images/instagram.png" alt=""></a>
+    <h3 class="es" id="local">Dónde estamos</h3>
+    <h3 class="en" id="local">Our location</h3>
+    <h3 class="ro" id="local">Unde suntem</h3>
+    <div class="mapouter">
+      <div class="gmap_canvas"><iframe width="600" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=calle%20de%20las%20huertas%206,%20madrid&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+      </div>
     </div>
-    <a id="priva-fn" class="priv-final es" href="privacidad.html">política de privacidad</a>
-    <a id="priva-fn" class="priv-final en" href="privacidad.html">privacy policy</a>
-    <a id="priva-fn" class="priv-final ro" href="privacidad.html">politică de confidențialitate</a>
+    <div id="bottom-div">
+      <div id="loc-text">
+        <p>Restaurante Il Piccolino della Farfalla</p>
+        <p>Calle Huertas, 6</p>
+        <p>28012 Madrid</p>
+      </div>
+      <div id="loc-info">
+        <div class="iconos">
+          <a href="https://www.facebook.com/La-Farfalla-Il-Picolino-142563812951591/" class="icon"><img src="../static/images/facebook.png" alt=""></a>
+          <a href="#" class="icon"><img src="../static/images/instagram.png" alt=""></a>
+        </div>
+        <a id="priva-fn" class="priv-final es" href="privacidad.html">política de privacidad</a>
+        <a id="priva-fn" class="priv-final en" href="privacidad.html">privacy policy</a>
+        <a id="priva-fn" class="priv-final ro" href="privacidad.html">politică de confidențialitate</a>
+      </div>
+    </div>
+
+
   </footer>
 </body>
 </html>

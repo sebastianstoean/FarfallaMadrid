@@ -23,10 +23,10 @@ h1 {
   font-size: 100px;
   line-height: 100px;
   font-weight: 200;
-  font-family: "FontFarfMin";
-  margin: auto;
-  padding: 20px 10px 0px;
-  color: rgba(245,245,245,0.9);
+  font-family: "FontFarf";
+  margin: auto auto 10px;
+  padding: 20px 15px 20px 5px;
+  color: black;
   text-align: center;
   letter-spacing: 0px;
   font-style: italic;
@@ -37,8 +37,8 @@ h1:hover, h2:hover, h3:hover {
 }
 
 h2 {
-  font-size: 50px;
-  line-height: 74px;
+  font-size: 40px;
+  line-height: 64px;
   text-align: center;
   font-weight: 200;
   font-family: "FontFarfMin";
@@ -47,8 +47,9 @@ h2 {
 
 h3 {
   font-size: 32px;
+  line-height: 30px;
   font-family: "FontFarfMin";
-  margin-bottom: 10px
+  margin: 10px auto 15px
 }
 
 p2 {
@@ -67,14 +68,23 @@ a:hover {
   cursor: pointer;
 }
 
-#idiomas {
+#idiomas, #primeros-botones {
   height: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#idiomas {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
-.es, .en, .ro {
+#idiomas h2 {
+  display: none;
+}
+.es {display: block;}
+.en, .ro {
   display: none;
 }
 
@@ -82,9 +92,65 @@ a:hover {
   margin:auto
 }
 
+header {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+}
+
+#home-nav {
+  margin-right: 0;
+}
+
+header {
+  background-color: rgba(0,0,0,0.15);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  overflow: hidden;
+}
+
+#header-list {
+  list-style: none;
+  display: flex;
+  justify-content: right;
+  flex-direction: row;
+}
+
+.nav1 {
+  display: none;
+}
+
+li {
+  width: 70px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px
+}
+
+li a {
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-underline-offset: 7px
+}
+
+li:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 #sect_titulo {
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
+  height: 80%;
+  padding-top: 30px;
+  background-color: #FFD6B6;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -92,32 +158,33 @@ a:hover {
 }
 
 #botones-tit {
-  margin: auto;
+  margin: auto auto auto;
   text-align:center;
-  background: rgba(255, 255, 255, 0.15);
   align-items: center;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 20px 0px
 }
 
 .botones button p, button a {
-  font-size: 30;
+  font-size: 20;
   font-family: "FontFarfMin";
-  color: rgba(0, 0, 0, 0.75);
+  color: #F3F0D7;
   text-decoration: none;
+  font-weight: bold
 }
 
 .botones button {
   /*background-color: rgba(88, 84, 151, 0.8);*/
-  background-color: rgba(245,245,245,0.9);
+  background-color: #B74242;
+  color: white;
   text-align: center;
-  border-radius: 3px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  width: 200px;
+  border: none;
+  border-radius: 20px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 125px;
 }
 
 .botones button:hover {
@@ -137,8 +204,7 @@ a:hover {
 }
 
 .sect {
-  margin-top: 20px;
-  background-color: rgba(0,0,0,0.05);
+  background-color: #fee5d1;
 }
 
 #sect_somos {
@@ -159,7 +225,13 @@ a:hover {
 .carta-item {
   display: flex;
   flex-direction: column;
+  width: 30vw;
+  height: 20vh;
   margin: auto
+}
+
+.carta-item:hover {
+  background-color: rgba(0,0,0,0.05)
 }
 
 .carta-item a {
@@ -181,7 +253,6 @@ a:hover {
 
 #reserva-tit {
   padding-top: 20px;
-  line-height: 50px;
 }
 
 #form * {
@@ -202,7 +273,7 @@ a:hover {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: rgba(0,0,0,0.1)
+  background-color: #FFD6B6
 }
 
 #form-field-check{
@@ -238,7 +309,8 @@ a:hover {
 
 #submit1, #submit1:hover {
   margin-top: 12px;
-  background-color: rgba(0,0,0,0.75);
+  background-color: #B74242;
+  border-radius: 40px;
   padding: 10px 20px;
   color: white
 }
@@ -267,8 +339,8 @@ a:hover {
 }
 
 #horario-in {
-  background-color: rgba(0,0,0,0.75);
-  outline: 2px dashed orange;
+  background-color: #B74242;
+  outline: 2px dashed #FFD6B6;
   color: white;
   outline-offset: -15px;
   padding: 42px 25px 50px;
@@ -282,7 +354,7 @@ a:hover {
 
 #horario-in hr {
   margin: 10px auto;
-  color: orange;
+  color: #FFD6B6;
   width: 20vw;
 }
 
@@ -298,12 +370,17 @@ footer {
 .localizacion {
   background-color: rgba(0,0,0,0.75);
   color: white;
-  padding: 10px 15px 15px;
+  padding: 20px 15px 15px;
   text-align: center;
+  margin-top: -10px
 }
 
-hr {
-  margin-bottom: 5px;
+.divisor {
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-top: 2px solid orange
 }
 
 .localizacion p {
@@ -321,21 +398,69 @@ hr {
   font-size: 12px
 }
 
-.heidi {
+.heidie {
   display: none !important;
 }
 
+.mapouter {
+  margin: auto;
+  position:relative;
+  text-align:right;
+  height:300px;
+  width:600px;
+}
+
+.gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  height:300px;
+  width:600px;
+}
+
 @media only screen and (min-device-width:768px) {
+  #idiomas h2 {
+    display: flex;
+    color: white;
+    font-family: FontFarf;
+    font-size: 120px;
+    line-height: 200px;
+  }
+
+  #primeros-botones {
+    height: 40vh;
+    flex-direction: row;
+    width: 90%
+  }
+
+  .boton-idioma {
+    margin: 10px auto auto auto
+  }
+
+  .nav1 {
+    display: block;
+  }
+
+  h1 {
+    width: 700px;
+    font-style: normal
+  }
+
+  .subtitulo {
+    background-color: rgba(0,0,0,0.07);
+    width: 250px;
+    font-size: 26px;
+    line-height: 30px;
+    margin: 10px auto auto;
+    padding: 10px 0px;
+    color: #5C2626;
+    font-style: italic;
+    box-shadow: -2px 2px 6px 2px rgba(0, 0, 0, 0.1);
+  }
+
   #botones-tit {
     display: grid;
     grid-template-areas:
-    'top top'
     'left right';
-  }
-
-  #reservarb {
-    grid-area: top;
-    margin: auto
   }
 
   #cartab {margin: auto 5px auto auto};
@@ -347,8 +472,8 @@ hr {
     gap: 40px
   }
 
-  #somos-tit {margin: auto;}
-  #entrada {width: 50vw;}
+  #somos-tit {margin: auto auto 10px auto;}
+  #entrada {width: 40vw;}
 
   #cart
   {
@@ -362,6 +487,45 @@ hr {
 
   .up-text {
     margin-bottom: 22px
+  }
+
+  #diario {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #link-insta {
+    margin: auto;
+  }
+
+  #menu-y-precio {
+    display: flex;
+    gap: 10px
+  }
+
+  .diario-h {
+    margin: auto 7px auto auto
+  }
+
+  #precio-menu {
+    font-family: FontFarfMin;
+    margin: auto auto auto 7px;
+    font-weight: 100;
+    font-size: 40px;
+    padding: 15px 0px 30px;
+    font-style:italic;
+    text-decoration: underline;
+    text-underline-offset: 8px
+  }
+
+  #link-insta {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 30px
+  }
+
+  #link-insta p, #link-insta a {
+    font-size: 15px
   }
 
   #form {width: 50vw;  margin: 10px auto}
@@ -380,25 +544,47 @@ hr {
   }
 
   .localizacion p {
-    line-height: 22px
+    line-height: 22px;
+    width: 400px
   }
 
   .iconos {
     margin: 10px auto auto auto;
   }
+
+  #bottom-div {
+    position: relative;
+    height: 100px
+  }
+
+  #loc-text, #loc-info {
+    position: absolute;
+    margin-top: 20px
+  }
+
+  #loc-text {
+    left: 50%;
+    transform: translate(-50%, 0%)
+  }
+
+  #loc-info {
+    right: 15vw
+  }
 }
 
 @media only screen and (min-device-width: 900px) {
-  #sect_somos {
-    display: grid;
-    grid-template-areas:
-    'top top'
-    'left right';
+  #somos-tit {
+    margin-bottom: 20px
   }
 
-  #somos-tit {grid-area: top; margin:auto}
-  #somos-text {grid-area: left; margin:auto}
-  #entrada {grid-area: right; margin:auto auto 20px auto; width: 35vw}
+  #sect_somos {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px
+  }
+  #somos-tit {margin: auto auto 10px auto}
+  #somos-text, #entrada {margin:auto}
+  #entrada {width: 30vw}
 
   #carta {
     width: 90%;
