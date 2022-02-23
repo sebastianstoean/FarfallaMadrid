@@ -1,5 +1,7 @@
 console.log(screen.height, screen.width);
-let language;
+let language = "es";
+var e = new Event("look", {"cancelable":true})
+let idiomas_on = 0
 
 function sleepFor(sleepDuration){
     var now = new Date().getTime();
@@ -8,24 +10,71 @@ function sleepFor(sleepDuration){
     }
 }
 
-function hideLanguage() {
-	document.getElementById("idiomas").style.display = "none";
-	var elements = document.getElementsByClassName("heidi");
-
-	while (elements.length > 0) {
-		elements[0].classList.remove("heidi");
-	}
-}
-
-function languageChange(lang) {
-	var elements = document.getElementsByClassName(lang);
+function languageChange(lang1, lang2) {
+	var elements = document.getElementsByClassName(lang2);
 	for(var i=0; i<elements.length; i++){
 		elements[i].style.display = "block";
 	}
-	language = lang;
-	hideLanguage();
 
+  elements = document.getElementsByClassName(lang1);
+	for(var i=0; i<elements.length; i++){
+		elements[i].style.display = "none";
+	}
+
+  return lang2;
 }
+
+function hide_unhide_dropdown(){
+  var idiomas = $("#lista-idiomas")
+  if (idiomas.is(":hidden") ) {
+    idiomas.slideDown("slow");
+    $("#foto-idioma").attr("src", "/static/images/world-map.png");
+    idiomas_on = 1
+  } else {
+    idiomas.slideUp("slow");
+    $("#foto-idioma").attr("src", "/static/images/world-map-2.png");
+    idiomas_on = 0
+  }
+}
+
+$(document).ready(function() {
+
+
+  $("#espanol-boton").click(function(){
+    if(language !== "es") {
+      language = languageChange(language, "es");
+      hide_unhide_dropdown()
+      $("#reservar-boton").removeClass("boton-nav-grande")
+    }
+  })
+
+  $("#ingles-boton").click(function(){
+    if(language !== "en") {
+      language = languageChange(language, "en");
+      hide_unhide_dropdown()
+      $("#reservar-boton").addClass("boton-nav-grande")
+    }
+  })
+
+  $("#rumano-boton").click(function(){
+    if(language !== "ro") {
+      language = languageChange(language, "ro");
+      hide_unhide_dropdown()
+      $("#reservar-boton").removeClass("boton-nav-grande")
+    }
+  })
+
+  $("#boton-cambio-idioma").click(function(){
+    hide_unhide_dropdown()
+  })
+
+  $("#carta-sin-boton").click(function() {
+    goToSinGluten()
+  });
+  $("#carta-boton").click(function() {
+    goToCarta()
+  });
+})
 
 function goToReservar(){
 	var reservas = document.getElementById("reserva-sect");
@@ -37,15 +86,15 @@ function goToCarta(){
 }
 
 function goToSinGluten() {
-	window.location.href = "../templates/cartas.html";
-	setTimeout()
-	document.getElementById('sin-gluten-boton').click();
+	window.location.href = "../templates/cartasing.html";
 }
 
 function goToEntrantes() {
-	window.location.href = "carta.html";
-	var entrantes = document.getElementById("Entrantes");
-	entrantes.scrollIntoView({behavior: 'smooth' });
+  window.location.href = "../templates/cartas.html";
+  window.addEventListener("load", function(){
+    console.log("a")
+    $("#boton-entrantes").click()
+  })
 }
 
 function goToPastas() {
@@ -103,7 +152,6 @@ function getCookie(cname) {
 // 		}
 // 	})
 // }
-language = "es"
 function sendMessage(message) {
 	$.ajax({
     url:'https://api.telegram.org/bot1832303215:AAFnpjGuRR6mBscYV539yka1LIN8xCjJ25s/sendMessage',
@@ -127,9 +175,7 @@ function noneNone(a, b){
 }
 
 var today = new Date().toISOString().split('T')[0];
-document.getElementsByName("fecha")[0].setAttribute('min', today);
 
-var e = new Event("look", {"cancelable":true})
 $("#submit1").click(function(e) {
 	e.preventDefault();
   var nombreForm = document.getElementById("nombre1");

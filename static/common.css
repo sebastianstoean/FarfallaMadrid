@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 28px;
+}
+
+@font-face {
+  font-family: FontFarf;
+  src: url(fonts/OPTIBank-Script.otf);
+}
+
+@font-face {
+  font-family: FontFarfMin;
+  src: url(fonts/BadScript-Regular.ttf);
+}
+
+.sect, .carta-dropdown {
+  background-color: #fee5d1;
+}
+
+.ro, .en {
+  display: none
+}
+
+h1 {
+  font-size: 100px;
+  line-height: 100px;
+  font-weight: 200;
+  font-family: "FontFarf";
+  margin: auto auto 10px;
+  padding: 20px 15px 20px 5px;
+  color: black;
+  text-align: center;
+  letter-spacing: 0px;
+  font-style: italic;
+}
+
+h1:hover, h2:hover, h3:hover {
+  cursor: default;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 64px;
+  text-align: center;
+  font-weight: 200;
+  font-family: "FontFarfMin";
+  padding-top: 20px;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 50px;
+  font-family: "FontFarfMin";
+}
+
+p2 {
+  text-align: center;
+}
+
+p3 {
+  cursor: default;
+}
+
+a {
+  color: black
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  background-color: rgba(0,0,0,0.15);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50px;
+}
+
+#header-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  position: absolute;
+}
+
+#home-nav {
+  margin-right: 0;
+}
+
+#header-list {
+  display: none;
+}
+
+#boton-cambio-idioma {
+  border: none;
+  background: transparent;
+}
+
+#lista-idiomas {
+  margin-top: 5px;
+  margin-left: 10px;
+  height: 114px;
+  width: 130px;
+  display: none
+}
+
+.dropdown ul {
+  list-style: none;
+  padding-left: 0px;
+  background: #c2a58e;
+  height: 114px;
+  left: 0;
+  position: absolute;
+  top: 35px;
+  width: 100%;
+}
+
+.dropdown ul a {
+  color: #000;
+  display: block;
+  padding: 5px 20px;
+}
+
+.dropdown ul a:hover, .dropdown ul a:active {
+  background-color: #f7d7bd
+}
+
+#foto-idioma {
+  position: relative;
+  left: 0px;
+  height: 24px !important;
+  cursor: pointer;
+}
+
+.dropdown {
+  padding: 0px;
+  position: relative;
+  display: block;
+  margin: auto auto auto 20px;
+  height: 70px;
+  width: 50px;
+  list-style: none
+}
+
+.dropdown > li > a {
+  display: block;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#sect_titulo {
+  height: 80vh;
+  padding-top: 30px;
+  background-color: #FFD6B6;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px !important;
+}
+
+#botones-tit {
+  margin: auto auto 30px;
+  text-align:center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.subtitulo {
+  background-color: rgba(0,0,0,0.07);
+  width: 75%;
+  font-size: 35px;
+  margin: 10px auto 30px;
+  padding: 7px 0px;
+  color: #5C2626;
+  font-style: italic;
+  box-shadow: -4px 4px 6px 4px rgba(0, 0, 0, 0.1);
+}
+
+.botones button p, button a {
+  font-size: 20;
+  font-family: "FontFarfMin";
+  color: #F3F0D7;
+  text-decoration: none;
+  font-weight: bold
+}
+
+.botones button {
+  /*background-color: rgba(88, 84, 151, 0.8);*/
+  background-color: #B74242;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 125px;
+}
+
+.botones button:hover {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+footer {
+  clear: both;
+}
+
+.localizacion {
+  background-color: #D9B69B;
+  padding: 20px 15px 15px;
+  text-align: center;
+  margin-top: -10px
+}
+
+.divisor {
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-top: 2px solid orange
+}
+
+.localizacion p {
+  font-size: 16px;
+  text-align: center !important;
+  line-height: 20px
+}
+
+.iconos {
+  margin-top: 10px
+}
+
+.localizacion a {
+  font-size: 12px
+}
+
+.mapouter {
+  margin: auto auto 15px;
+  position:relative;
+  text-align:right;
+  height:300px;
+  width:350px;
+
+}
+
+.gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+}
+
+@media only screen and (min-device-width:768px) {
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    height: 70px;
+  }
+
+  .boton-nav {
+    width: 80px;
+    text-align: center;
+    align-content: center;
+    display: flex;
+  }
+
+  h1 {
+    width: 700px;
+    font-style: normal
+  }
+
+  .subtitulo {
+    background-color: rgba(0,0,0,0.07);
+    width: 250px;
+    font-size: 26px;
+    line-height: 30px;
+    margin: 10px auto auto;
+    padding: 10px 0px;
+    color: #5C2626;
+    font-style: italic;
+    box-shadow: -2px 2px 6px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .boton-nav-peque {
+    width: 60px !important
+  }
+
+  .boton-nav-grande {
+    width: 160px !important
+  }
+
+  #header-list {
+    list-style: none;
+    width: 70%;
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+  }
+
+  #header-list li {
+    width: 70px;
+    line-height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px
+  }
+
+  #header-list > li > a {
+    font-size: 16px;
+    text-decoration: underline;
+    text-decoration-color: black;
+    text-underline-offset: 5px;
+    font-style: italic;
+  }
+
+  #header-list li:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  #cambio-idiomas {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+
+
+
+  .localizacion p {
+    line-height: 22px;
+    width: 400px
+  }
+
+  .iconos {
+    margin: 10px auto auto auto;
+  }
+
+  #bottom-div {
+    position: relative;
+    height: 100px
+  }
+
+  #loc-text, #loc-info {
+    position: absolute;
+    margin-top: 20px
+  }
+
+  #loc-text {
+    left: 50%;
+    transform: translate(-50%, 0%)
+  }
+
+  #loc-info {
+    right: 15vw
+  }
+
+  .mapouter {
+    width: 600px;
+    margin: auto;
+  }
+
+  .gmap_canvas {
+    filter: invert(90%) contrast(80%);
+  }
+}

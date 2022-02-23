@@ -1,210 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-
-* {
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  letter-spacing: 1px;
-  line-height: 28px;
-}
-
-@font-face {
-  font-family: FontFarf;
-  src: url(fonts/OPTIBank-Script.otf);
-}
-
-@font-face {
-  font-family: FontFarfMin;
-  src: url(fonts/BadScript-Regular.ttf);
-}
-
-h1 {
-  font-size: 100px;
-  line-height: 100px;
-  font-weight: 200;
-  font-family: "FontFarf";
-  margin: auto auto 10px;
-  padding: 20px 15px 20px 5px;
-  color: black;
-  text-align: center;
-  letter-spacing: 0px;
-  font-style: italic;
-}
-
-h1:hover, h2:hover, h3:hover {
-  cursor: default;
-}
-
-h2 {
-  font-size: 40px;
-  line-height: 64px;
-  text-align: center;
-  font-weight: 200;
-  font-family: "FontFarfMin";
-  padding-top: 20px;
-}
-
-h3 {
-  font-size: 32px;
-  line-height: 30px;
-  font-family: "FontFarfMin";
-  margin: 10px auto 15px
-}
-
-p2 {
-  text-align: center;
-}
-
-p3 {
-  cursor: default;
-}
-
-a {
-  color: black
-}
-
-a:hover {
-  cursor: pointer;
-}
-
-#idiomas, #primeros-botones {
-  height: 100%;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#idiomas {
-  background-color: rgba(0, 0, 0, 0.75);
-}
-
-#idiomas h2 {
-  display: none;
-}
-.es {display: block;}
-.en, .ro {
-  display: none;
-}
-
-.boton-idioma {
-  margin:auto
-}
-
-header {
-  width: 100%;
-  height: 50px;
-  position: absolute;
-}
-
-#home-nav {
-  margin-right: 0;
-}
-
-header {
-  background-color: rgba(0,0,0,0.15);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: center;
-  overflow: hidden;
-}
-
-#header-list {
-  list-style: none;
-  display: flex;
-  justify-content: right;
-  flex-direction: row;
-}
-
-.nav1 {
-  display: none;
-}
-
-li {
-  width: 70px;
-  line-height: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 15px
-}
-
-li a {
-  font-size: 20px;
-  text-decoration: underline;
-  text-decoration-color: black;
-  text-underline-offset: 7px
-}
-
-li:hover {
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-#sect_titulo {
-  height: 80%;
-  padding-top: 30px;
-  background-color: #FFD6B6;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  margin-top: 0px !important;
-}
-
-#botones-tit {
-  margin: auto auto auto;
-  text-align:center;
-  align-items: center;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.botones button p, button a {
-  font-size: 20;
-  font-family: "FontFarfMin";
-  color: #F3F0D7;
-  text-decoration: none;
-  font-weight: bold
-}
-
-.botones button {
-  /*background-color: rgba(88, 84, 151, 0.8);*/
-  background-color: #B74242;
-  color: white;
-  text-align: center;
-  border: none;
-  border-radius: 20px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  width: 125px;
-}
-
-.botones button:hover {
-  cursor: pointer;
-}
-
-#reservarb {
-  margin: auto;
-}
-
-#cartab {
+#reservarb, #cartab {
   margin: auto;
 }
 
 #cartasinb {
   margin-left: 5px
-}
-
-.sect {
-  background-color: #fee5d1;
 }
 
 #sect_somos {
@@ -225,7 +24,7 @@ li:hover {
 .carta-item {
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: 35vw;
   height: 20vh;
   margin: auto
 }
@@ -249,6 +48,31 @@ li:hover {
 
 #reserva-sect {
   padding-bottom: 0px;
+}
+
+#menu-y-precio {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px
+}
+
+#precio-menu {
+  margin: auto;
+  font-size: 30px;
+  font-style: italic;
+  padding-top: 15px;
+  padding-bottom: 15px
+}
+
+.diario-h {
+  margin: auto;
+}
+
+.seguid-insta {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 20px
 }
 
 #reserva-tit {
@@ -344,7 +168,9 @@ li:hover {
   color: white;
   outline-offset: -15px;
   padding: 42px 25px 50px;
-  margin-bottom: 25px
+  margin-bottom: 25px;
+  width: 80%;
+  margin: auto auto 25px;
 }
 
 #horario-in * {
@@ -363,100 +189,7 @@ li:hover {
   font-weight: lighter
 }
 
-footer {
-  clear: both;
-}
-
-.localizacion {
-  background-color: rgba(0,0,0,0.75);
-  color: white;
-  padding: 20px 15px 15px;
-  text-align: center;
-  margin-top: -10px
-}
-
-.divisor {
-  width: 300px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  border-top: 2px solid orange
-}
-
-.localizacion p {
-  font-size: 16px;
-  text-align: center !important;
-  line-height: 20px
-}
-
-.iconos {
-  margin-top: 10px
-}
-
-.localizacion a {
-  color: white;
-  font-size: 12px
-}
-
-.heidie {
-  display: none !important;
-}
-
-.mapouter {
-  margin: auto;
-  position:relative;
-  text-align:right;
-  height:300px;
-  width:600px;
-}
-
-.gmap_canvas {
-  overflow:hidden;
-  background:none!important;
-  height:300px;
-  width:600px;
-}
-
 @media only screen and (min-device-width:768px) {
-  #idiomas h2 {
-    display: flex;
-    color: white;
-    font-family: FontFarf;
-    font-size: 120px;
-    line-height: 200px;
-  }
-
-  #primeros-botones {
-    height: 40vh;
-    flex-direction: row;
-    width: 90%
-  }
-
-  .boton-idioma {
-    margin: 10px auto auto auto
-  }
-
-  .nav1 {
-    display: block;
-  }
-
-  h1 {
-    width: 700px;
-    font-style: normal
-  }
-
-  .subtitulo {
-    background-color: rgba(0,0,0,0.07);
-    width: 250px;
-    font-size: 26px;
-    line-height: 30px;
-    margin: 10px auto auto;
-    padding: 10px 0px;
-    color: #5C2626;
-    font-style: italic;
-    box-shadow: -2px 2px 6px 2px rgba(0, 0, 0, 0.1);
-  }
-
   #botones-tit {
     display: grid;
     grid-template-areas:
@@ -465,6 +198,10 @@ footer {
 
   #cartab {margin: auto 5px auto auto};
   #cartasinb {margin: auto}
+
+  .carta-item {
+    height: 33vh
+  }
 
   #sect_somos {
     width: 70%;
@@ -498,8 +235,12 @@ footer {
     margin: auto;
   }
 
+  #link-insta .icon {
+    display: block
+  }
+
   #menu-y-precio {
-    display: flex;
+    flex-direction: row;
     gap: 10px
   }
 
@@ -541,34 +282,6 @@ footer {
 
   .img-clickable {
     width: 7.5vw;
-  }
-
-  .localizacion p {
-    line-height: 22px;
-    width: 400px
-  }
-
-  .iconos {
-    margin: 10px auto auto auto;
-  }
-
-  #bottom-div {
-    position: relative;
-    height: 100px
-  }
-
-  #loc-text, #loc-info {
-    position: absolute;
-    margin-top: 20px
-  }
-
-  #loc-text {
-    left: 50%;
-    transform: translate(-50%, 0%)
-  }
-
-  #loc-info {
-    right: 15vw
   }
 }
 
