@@ -53,6 +53,10 @@
     </nav>
   </header>
   <body>
+    <div class="cookie">
+      <p class="cookie-texto">Utilizamos cookies para ofrecer la mejor experiencia usando nuestra página</p>
+      <button type="button" name="button" class="cookie-accept">Aceptar</button>
+    </div>
     <section class="sect", id="sect_titulo">
       <h1 id="titulo-pagina">Il Piccolino della Farfalla</h1>
       <h2 class="es subtitulo">Carta</h2>
@@ -101,57 +105,8 @@
                 Especial:
             </article>
           </article>
-
           <article class="carta-dropdown">
-            <button type="button" name="button" class="titulo-carta">
-              <h3>Nuestras Pizzas</h3>
-            </button>
-            <article class="texto-carta" id="carta-pizzas">
-              <img src="../static/images/foto-pizza.png" id="foto-pizza" alt="">
-              <p class="nombre-foto">Pizza vegetal</p>
-              <p class="gluten">Margarita: mozzarella, tomate y orégano<br>7,05€<br class="br-grande">
-                Caprichosa: jamón<br>7,75€<br class="br-grande">
-                Funghi: champiñones<br>7,75€<br class="br-grande">
-                Exquisita: tomate en rodajas y ajo<br>7,75€<br class="br-grande">
-                Vegetal: maíz, champiñones y pimientos<br>7,75€<br class="br-grande">
-                Napolitana: anchoas y alcaparras<br>7,85€<br class="br-grande">
-                Erótica: roquefort, apio y nueces<br>7,85€<br class="br-grande">
-                Cuatro quesos<br>7,85€<br class="br-grande">
-                Hawaiana: piña y jamón<br>7,85€<br class="br-grande">
-                Especial: beicon, cebolla y champiñones<br>7,85€<br class="br-grande">
-                Carnosa: carne animal o vegetal de quorn<br>7,85€<br class="br-grande">
-                Mediterránea: atún<br>7,85€<br class="br-grande">
-                Castellana: chorizo o salami<br>7,85€<br class="br-grande">
-                <br>
-                Hazla tú mismo: base margarita + 2 ingredientes de otras pizzas<br>8,10€<br class="br-grande">
-                Hazla vegana: cambia la mozzarella por queso vegano<br>+0,80€<br class="br-grande">
-                Hazla sin gluten: cualquiera de nuestras pizzas<br>+0,80€<br class="br-grande">
-              </p>
-            </article>
-          </article>
-          <article class="carta-dropdown">
-            <button type="button" name="button" class="titulo-carta">
-              <h3>Nuestros Postres</h3>
-            </button>
-            <article class="texto-carta" id="carta-postres">
-              <img id="foto-postre" src="../static/images/foto-postre.png" alt="">
-              <p class="nombre-foto">Brownie casero con helado</p>
-              <p class="gluten">Caprichos de dulce de leche<br>4,80€<br class="br-grande">
-                Tarta casera de queso<br>4,60€<br class="br-grande">
-                Strudel de manzana casero con helado<br>4,60€<br class="br-grande">
-                Brownie casero con helado y chocolate caliente (opción sin gluten)<br>4,60€<br class="br-grande">
-                Charlotte: helado de nata con chocolate caliente y nueces<br>4,60€<br class="br-grande">
-                Tiramisú casero<br>4,60€<br class="br-grande">
-                Trufas con nata<br>4,60€<br class="br-grande">
-                Alfajores de maicena con dulce de leche y coco<br>5,10€<br class="br-grande">
-                Tarta sin gluten con crema y chocolate<br>4,60€<br class="br-grande">
-              </p>
-            </article>
-          </article>
-        </div>
-        <div id="col2">
-          <article class="carta-dropdown">
-            <button type="button" name="button" class="titulo-carta">
+            <button type="button" name="button" class="titulo-carta" id="boton-veg">
               <h3>Vegetarianos y Pastas</h3>
             </button>
             <article class="texto-carta" id="carta-vegetariano">
@@ -190,7 +145,36 @@
             </article>
           </article>
           <article class="carta-dropdown">
-            <button type="button" name="button" class="titulo-carta">
+            <button type="button" name="button" class="titulo-carta" id="boton-pizz">
+              <h3>Nuestras Pizzas</h3>
+            </button>
+            <article class="texto-carta" id="carta-pizzas">
+              <img src="../static/images/foto-pizza.png" id="foto-pizza" alt="">
+              <p class="nombre-foto">Pizza vegetal</p>
+              <p class="gluten">Margarita: mozzarella, tomate y orégano<br>7,05€<br class="br-grande">
+                Caprichosa: jamón<br>7,75€<br class="br-grande">
+                Funghi: champiñones<br>7,75€<br class="br-grande">
+                Exquisita: tomate en rodajas y ajo<br>7,75€<br class="br-grande">
+                Vegetal: maíz, champiñones y pimientos<br>7,75€<br class="br-grande">
+                Napolitana: anchoas y alcaparras<br>7,85€<br class="br-grande">
+                Erótica: roquefort, apio y nueces<br>7,85€<br class="br-grande">
+                Cuatro quesos<br>7,85€<br class="br-grande">
+                Hawaiana: piña y jamón<br>7,85€<br class="br-grande">
+                Especial: beicon, cebolla y champiñones<br>7,85€<br class="br-grande">
+                Carnosa: carne animal o vegetal de quorn<br>7,85€<br class="br-grande">
+                Mediterránea: atún<br>7,85€<br class="br-grande">
+                Castellana: chorizo o salami<br>7,85€<br class="br-grande">
+                <br>
+                Hazla tú mismo: base margarita + 2 ingredientes de otras pizzas<br>8,10€<br class="br-grande">
+                Hazla vegana: cambia la mozzarella por queso vegano<br>+0,80€<br class="br-grande">
+                Hazla sin gluten: cualquiera de nuestras pizzas<br>+0,80€<br class="br-grande">
+              </p>
+            </article>
+          </article>
+        </div>
+        <div id="col2">
+          <article class="carta-dropdown">
+            <button type="button" name="button" class="titulo-carta" id="boton-carnes">
               <h3>Carnes y Pescados</h3>
             </button>
             <article class="gluten texto-carta" id="carta-pescados">
@@ -222,6 +206,25 @@
                 Escalope de pollo gratinado con tomate y queso<br>10,25€<br class="br-grande">
                 Carrillada de ternera<br>12,50€<br class="br-grande">
                 Hamburguesa de Kobe	(opción de pan sin gluten)<br>12,50<br class="br-grande">
+              </p>
+            </article>
+          </article>
+          <article class="carta-dropdown">
+            <button type="button" name="button" class="titulo-carta" id="boton-postres">
+              <h3>Nuestros Postres</h3>
+            </button>
+            <article class="texto-carta" id="carta-postres">
+              <img id="foto-postre" src="../static/images/foto-postre.png" alt="">
+              <p class="nombre-foto">Brownie casero con helado</p>
+              <p class="gluten">Caprichos de dulce de leche<br>4,80€<br class="br-grande">
+                Tarta casera de queso<br>4,60€<br class="br-grande">
+                Strudel de manzana casero con helado<br>4,60€<br class="br-grande">
+                Brownie casero con helado y chocolate caliente (opción sin gluten)<br>4,60€<br class="br-grande">
+                Charlotte: helado de nata con chocolate caliente y nueces<br>4,60€<br class="br-grande">
+                Tiramisú casero<br>4,60€<br class="br-grande">
+                Trufas con nata<br>4,60€<br class="br-grande">
+                Alfajores de maicena con dulce de leche y coco<br>5,10€<br class="br-grande">
+                Tarta sin gluten con crema y chocolate<br>4,60€<br class="br-grande">
               </p>
             </article>
           </article>

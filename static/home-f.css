@@ -1,3 +1,39 @@
+#reservaHecha {
+  width: 80vw;
+  height: 40vh;
+}
+
+#botones-popup {
+  position: relative;
+}
+
+.popup-x {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 25px;
+  height: 25px;
+  line-height: 15px;
+  font-size: 15px;
+  background-color: #B74242;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+#reserva-texto-popup {
+  position: absolute;
+  width: 90%;
+  height: 28vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 25%);
+  vertical-align: center;
+  text-align: center;
+  margin: 1% auto;
+}
+
 #reservarb, #cartab {
   margin: auto;
 }
@@ -19,6 +55,20 @@
 #entrada {
   width: 90vw;
   margin: auto auto 20px;
+}
+
+#text2 {
+  text-align: center !important;
+  margin-bottom: 0px !important;
+  color: #983838;
+}
+
+#text2-quote {
+
+  text-align: right !important;
+  font-size: 16px;
+  color: #983838;
+  text-decoration: underline;
 }
 
 .carta-item {
@@ -190,6 +240,15 @@
 }
 
 @media only screen and (min-device-width:768px) {
+  #reservaHecha {
+    width: 50vw;
+    height: 50vh;
+  }
+
+  #reserva-texto-pop {
+    height: 33vh
+  }
+
   #botones-tit {
     display: grid;
     grid-template-areas:
@@ -210,7 +269,7 @@
   }
 
   #somos-tit {margin: auto auto 10px auto;}
-  #entrada {width: 40vw;}
+  #entrada {width: 35vw;}
 
   #cart
   {
@@ -291,13 +350,37 @@
   }
 
   #sect_somos {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 20px
+    display: grid;
+    grid-template-areas:
+    'top1 top2'
+    'mid mid'
+    'bot bot';
+    padding-bottom: 20px;
+    gap: 15px
   }
+  .t1 {grid-area: top1}
+  .t2 {grid-area: mid}
+
   #somos-tit {margin: auto auto 10px auto}
-  #somos-text, #entrada {margin:auto}
-  #entrada {width: 30vw}
+  #somos-text {margin:auto}
+  #entrada {
+    width: 35vw;
+    grid-area: top2;
+    margin: 20px auto auto auto
+  }
+
+  #quote {
+    grid-area: bot;
+    background-color: #B74242;
+    margin: auto;
+    padding: 20px;
+    outline: 4px dashed #FFD6B6;
+    outline-offset: -10px;
+  }
+
+  #text2, #text2-quote {
+    color: rgba(255,255,255,0.9)
+  }
 
   #carta {
     width: 90%;
@@ -324,7 +407,4 @@
     width: 25vw
   }
 
-  .error {
-    font-size: 15px
-  }
 }

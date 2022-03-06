@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="../static/home-f.css">
   <link rel="stylesheet" href="../static/checkbox.css">
   <script src ="../static/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/2.3.1/jsencrypt.min.js" async></script>
   <title>Il Piccolino della Farfalla</title>
   <link rel="icon" href="/static/images/flaticon.ico" type = "image/x-icon">
   <meta charset="utf-8">
@@ -54,6 +55,16 @@
   </nav>
 </header>
 <body>
+  <div class="popup" id="reservaHecha">
+    <div id="botones-popup">
+      <button type="button" name="button" class="popup-x">x</button>
+      <p id="reserva-texto-popup"></p>
+    </div>
+  </div>
+  <div class="cookie">
+    <p class="cookie-texto">Utilizamos cookies para ofrecer la mejor experiencia usando nuestra página</p>
+    <button type="button" name="button" class="cookie-accept">Aceptar</button>
+  </div>
 	<section class="sect" id="sect_titulo">
     <h1>Il Piccolino della Farfalla</h1>
     <h2 class="es subtitulo">Comida Italiana</h2>
@@ -77,15 +88,29 @@
     <h2 class="grid-item-somos1 en" id="somos-tit">Who We Are</h2>
     <h2 class="grid-item-somos1 ro" id="somos-tit">Cine Suntem</h2>
     <article id="sect_somos">
-      <div class="grid-item-somos2" id="somos-text">
-        <p class="es text1">Il Piccolino della Farfalla es un pequeño restaurante italiano-argentino en pleno barrio de las letras de Madrid. <br>
-          Llevamos con vosotros desde 19XX y nos gusta consideramos un restaurante peculiar, ya que nuestra cocina es una mezcla poco común de culturas.</p>
-        <p class="en text1">Il Piccolino della Farfalla is a small italian-argentinian restaurant located in the Barrio de las Letras of Madrid.<br>
-        We've been here since 19XX, and we like to think of us as a peculiar restaurant, as we have an uncommon mix of cultural dishes.</p>
-        <p class="ro text1">Il Piccolino della Farfalla este un restaurant italian și argentinian situat în Barrio de las Letras din Madrid.
-        Suntem cu voi din 19XX și ne considerăm un restaurant interesant, </p>
-      </div>
+      <p class="es text1 t1">Il Piccolino della Farfalla nace en la calle Santa María en 1981, con …… de noche: actores, músicos, bailarines y magos. Después de sus actuaciones aterrizan aquí para nutrirse de una comida rica, casera, fresca y abundante, además de un precio inmejorable. Aunque ahora estamos en la calle Huertas, seguimos manteniendo un aire y un sabor que, según la mayoría de nuestros clientes, les hace pensar en “la casa de su abuela”. Por ello nos han seguido trayendo a sus
+        hijos, y estos a los suyos... </p>
+      <p class="es text1 t2">
+        Durante años hemos estado atentos a satisfacer minorías con opciones variadas como platos sin gluten, postres sin azúcar o veganos, además de las pastas y pizzas italianas y las carnes argentinas. Como negocio familiar, agradecemos desde el corazón la fidelidad de nuestros clientes y acogemos con alegría a todos los nuevos, a los que aseguramos plena satisfacción.
+      </p>
+      <p class="en text1 t1">
+        Il Piccolino della Farfalla was born in calle Santa María in 1981, with outstanding clientele: magicians, singers, dancers and actors. Once they finished their performances, they would come here to enjoy our delicious and plentiful homemade dishes. Even though we have moved our location to calle Huertas, we still maintain a warm feel which many say reminds them of their “granny’s house”.
+      </p>
+      <p class="en text1 t2">
+        We have always been concerned with satisfying minorities, this is why we include a huge variety of recipes composed of gluten-free food, Italian pasta and pizza, Argentinian meat or sugar-free desserts.
+      </p>
+      <p class="ro text1">Il Piccolino della Farfalla este un restaurant italian și argentinian situat în Barrio de las Letras din Madrid.
+      Suntem cu voi din 19XX și ne considerăm un restaurant interesant, </p>
       <img id="entrada" class="grid-item-somos3" src="../static/images/entrada.png" alt="Entrada de La Farfalla">
+
+      <div class="es" id="quote">
+        <p class="es" id="text2">
+          « La comida une a la gente en muchos niveles diferentes. Es el alimento del alma y del cuerpo, realmente es amor. »
+        </p>
+        <p class="es" id="text2-quote">
+          Giada de Laurentis, Cocinera
+        </p>
+      </div>
     </article>
   </section>
   <section id="carta-s" class="grid-carta sect  ">
@@ -201,9 +226,9 @@
             <p3 class="error" id="no-hora-es">* este campo es obligatorio</p3>
             <p3 class="error" id="no-hora-en">* this input is necessary</p3>
             <p3 class="error" id="no-hora-ro">* informație necesară</p3>
-            <p3 class="error" id="mal-hora-es">* hora fuera de horario, tenga en cuenta que debe llegar mínimo 45 minutos antes del cierre</p3>
-            <p3 class="error" id="mal-hora-en">* selected time is out of schedule, remember to book a minimum of 45 minutes before closing hour<p3>
-            <p3 class="error" id="mal-hora-ro">* nu se pot face rezervari cu 45 de minute înaintea orei de închidere</p3>
+            <p3 class="error" id="mal-hora-es">* hora fuera de horario, tenga en cuenta que debe llegar mínimo 1 hora antes del cierre</p3>
+            <p3 class="error" id="mal-hora-en">* selected time is out of schedule, remember to book a minimum of 1 hour before closing hour<p3>
+            <p3 class="error" id="mal-hora-ro">* nu se pot face rezervari cu 1 oră înaintea orei de închidere</p3>
           </fieldset>
           <fieldset class="form-field">
             <label id="personaslab">
@@ -236,7 +261,7 @@
         <div class="es" id="horario-in">
           <h3 id="horario-titulo">Horario</h3>
           <h4 id="lun-jue">Lunes a jueves</h4>
-          <p>13:00 - 16:30<br>19:30 - 00:30</p>
+          <p>13:00 - 16:30<br>19:30 - 00:00</p>
           <hr>
           <h4 id="findes">Viernes, Sábado, Vísperas y Festivos</h4>
           <p>13:00 - 2:00</p>
@@ -258,7 +283,7 @@
         <div class="en" id="horario-in">
           <h3 id="horario-titulo">Schedule</h3>
           <h4 id="lun-jue">Monday to Thursday</h4>
-          <p>13:00 - 16:30<br>19:30 - 00:30</p>
+          <p>13:00 - 16:30<br>19:30 - 00:00</p>
           <hr>
           <h4 id="findes">Friday, Saturday, Holidays and Eves</h4>
           <p>13:00 - 2:00</p>
@@ -280,7 +305,7 @@
         <div class="ro" id="horario-in">
           <h3 id="horario-titulo">Horariu</h3>
           <h4 id="lun-jue">De Luni pănă Joi</h4>
-          <p>13:00 - 16:30<br>19:30 - 00:30</p>
+          <p>13:00 - 16:30<br>19:30 - 00:00</p>
           <hr>
           <h4 id="findes">Vineri, Sâmbătă și Sărbători</h4>
           <p>13:00 - 2:00</p>
