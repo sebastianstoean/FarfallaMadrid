@@ -24,55 +24,61 @@ function languageChange(lang1, lang2) {
 		elements[i].style.display = "none";
 	}
 
+  if (lang2 === "es") {
+    $("#boton-cambio-idioma").html("English")
+  }
+  else if (lang2 === "en") {
+    $("#boton-cambio-idioma").html("Español")
+  }
+
   return lang2;
 }
 
-function hide_unhide_dropdown(){
-  var idiomas = $("#lista-idiomas")
-  if (idiomas.is(":hidden") ) {
-    idiomas.slideDown("slow");
-    $("#foto-idioma").attr("src", "/static/images/world-map.png");
-    idiomas_on = 1
-  } else {
-    idiomas.slideUp("slow");
-    $("#foto-idioma").attr("src", "/static/images/world-map-2.png");
-    idiomas_on = 0
-  }
-}
+// function hide_unhide_dropdown(){
+//   var idiomas = $("#lista-idiomas")
+//   if (idiomas.is(":hidden") ) {
+//     idiomas.slideDown("slow");
+//     $("#foto-idioma").attr("src", "/static/images/world-map.png");
+//     idiomas_on = 1
+//   } else {
+//     idiomas.slideUp("slow");
+//     $("#foto-idioma").attr("src", "/static/images/world-map-2.png");
+//     idiomas_on = 0
+//   }
+// }
 
 $(document).ready(function() {
-  $("#espanol-boton").click(function(){
-    if(language !== "es") {
-      language = languageChange(language, "es");
-      hide_unhide_dropdown()
-      $("#reservar-boton").removeClass("boton-nav-grande")
-    }
-  })
-
-  $("#ingles-boton").click(function(){
-    if(language !== "en") {
-      language = languageChange(language, "en");
-      hide_unhide_dropdown()
-      $("#reservar-boton").addClass("boton-nav-grande")
-    }
-  })
-
-  $("#rumano-boton").click(function(){
-    if(language !== "ro") {
-      language = languageChange(language, "ro");
-      hide_unhide_dropdown()
-      $("#reservar-boton").removeClass("boton-nav-grande")
-    }
+  $("#accept-cookie").click(function(){
+    $(this).parent().attr("display", "none")
   })
 
   $("#boton-cambio-idioma").click(function(){
-    hide_unhide_dropdown()
+    if (language === "es") {
+      new_language = "en"
+    }
+    else if (language === "en") {
+      new_language = "es"
+    }
+
+    language = languageChange(language, new_language);
+    // hide_unhide_dropdown()
   })
 
-  $("#carta-sin-boton").click(function() {
-    goToSinGluten()
+  $("#boton-nav-sing").click(function() {
+    setCookie("gluten", "1", 10)
+    goToCarta()
   });
-  $("#carta-boton").click(function() {
+  $("#boton-nav-carta").click(function() {
+    setCookie("gluten", "0", 10)
+    goToCarta()
+  });
+
+  $("#boton-nav-sing2").click(function() {
+    setCookie("gluten", "1", 10)
+    goToCarta()
+  });
+  $("#boton-nav-carta2").click(function() {
+    setCookie("gluten", "0", 10)
     goToCarta()
   });
 
@@ -99,10 +105,6 @@ $(document).ready(function() {
 })
 function goToCarta(){
 	window.location.href = "../templates/cartas.html";
-}
-
-function goToSinGluten() {
-	window.location.href = "../templates/cartasing.html";
 }
 
 function goToEntrantes() {

@@ -13,43 +13,29 @@
 </head>
 <header>
   <nav id="header-nav">
-    <ul class="dropdown">
-      <li id="cambio-idiomas">
-        <a href="#">
-          <button type="button" name="button" id="boton-cambio-idioma">
-            <img id="foto-idioma" src="/static/images/world-map-2.png" alt="">
-          </button>
-        </a>
-        <ul id="lista-idiomas">
-          <li><a id="espanol-boton">Español</a></li>
-          <li><a id="ingles-boton">English</a></li>
-          <li><a id="rumano-boton">Română</a></li>
-        </ul>
-      </li>
-    </ul>
+    <div id="div-idioma">
+      <img src="/static/images/world-button.png" alt="cambiar idioma" id="foto-idioma">
+      <button type="button" name="cambiar_idioma" id="boton-cambio-idioma">English</button>
+    </div>
     <ul id="header-list">
       <li class="boton-nav boton-nav-peque">
         <a id="home-nav" href="home.html">Home</a>
       </li>
       <li class="boton-nav boton-nav-peque" id="carta-boton">
-        <a class="es" href="cartas.html">Carta</a>
-        <a class="en" href="cartas.html">Menu</a>
-        <a class="ro" href="cartas.html">Meniu</a>
+        <a class="es" id="boton-nav-carta">Carta</a>
+        <a class="en" id="boton-nav-carta">Menu</a>
       </li>
       <li class="boton-nav boton-nav-grande" id="carta-sin-boton">
-        <a class="es" href="cartasing.html">Carta Sin Gluten</a>
-        <a class="en" href="cartasing.html">Gluten-free Menu</a>
-        <a class="ro" href="cartasing.html">Meniu Fără Gluten</a>
+        <a class="es" id="boton-nav-sing">Carta Sin Gluten</a>
+        <a class="en" id="boton-nav-sing">Gluten-free Menu</a>
       </li>
       <li class="boton-nav" id="reservar-boton">
         <a class="es">Reservar</a>
         <a class="en">Book a Table</a>
-        <a class="ro">Rezervare</a>
       </li>
       <li class="boton-nav boton-nav-grande" id="about-boton">
         <a class="es">Sobre nosotros</a>
         <a class="en">About us</a>
-        <a class="ro">Despre noi</a>
       </li>
     </ul>
   </nav>
@@ -63,30 +49,26 @@
   </div>
   <div class="cookie">
     <p class="cookie-texto">Utilizamos cookies para ofrecer la mejor experiencia usando nuestra página</p>
-    <button type="button" name="button" class="cookie-accept">Aceptar</button>
+    <button type="button" name="button" class="cookie-accept" id="accept-cookie">Aceptar</button>
   </div>
 	<section class="sect" id="sect_titulo">
     <h1>Il Piccolino della Farfalla</h1>
     <h2 class="es subtitulo">Comida Italiana</h2>
     <h2 class="en subtitulo">Italian Cuisine</h2>
-    <h2 class="ro subtitulo">Mâncare Italiană</h2>
     <nav id="botones-tit" class="botones">
-			<button type="button" id="cartab" onclick="goToCarta()">
+			<button type="button" id="boton-nav-carta2">
         <p class="es">Carta</p>
         <p class="en">Menu</p>
-        <p class="ro">Meniu</p>
       </button>
-      <button type="button" id="cartasinb" onclick="goToSinGluten()">
+      <button type="button" id="boton-nav-sing2">
         <p class="es">Sin Gluten</p>
         <p class="en">Gluten-Free</p>
-        <p class="ro">Fără Gluten</p>
       </button>
     </nav>
   </section>
   <section class="sect  ">
     <h2 class="grid-item-somos1 es" id="somos-tit">Quiénes Somos</h2>
     <h2 class="grid-item-somos1 en" id="somos-tit">Who We Are</h2>
-    <h2 class="grid-item-somos1 ro" id="somos-tit">Cine Suntem</h2>
     <article id="sect_somos">
       <p class="es text1 t1">Il Piccolino della Farfalla nace en la calle Santa María en 1981, con …… de noche: actores, músicos, bailarines y magos. Después de sus actuaciones aterrizan aquí para nutrirse de una comida rica, casera, fresca y abundante, además de un precio inmejorable. Aunque ahora estamos en la calle Huertas, seguimos manteniendo un aire y un sabor que, según la mayoría de nuestros clientes, les hace pensar en “la casa de su abuela”. Por ello nos han seguido trayendo a sus
         hijos, y estos a los suyos... </p>
@@ -99,8 +81,6 @@
       <p class="en text1 t2">
         We have always been concerned with satisfying minorities, this is why we include a huge variety of recipes composed of gluten-free food, Italian pasta and pizza, Argentinian meat or sugar-free desserts.
       </p>
-      <p class="ro text1">Il Piccolino della Farfalla este un restaurant italian și argentinian situat în Barrio de las Letras din Madrid.
-      Suntem cu voi din 19XX și ne considerăm un restaurant interesant, </p>
       <img id="entrada" class="grid-item-somos3" src="../static/images/entrada.png" alt="Entrada de La Farfalla">
 
       <div class="es" id="quote">
@@ -114,29 +94,37 @@
     </article>
   </section>
   <section id="carta-s" class="grid-carta sect  ">
+    <hr class="divisor" id="divisor_menu">
+    <div id="diario">
+      <div id="menu-y-precio">
+        <h3 class="es diario-h">Menú diario</h3>
+        <h3 class="en diario-h">Daily Menu</h3>
+        <p id="precio-menu">13,50€</p>
+      </div>
+      <div id="link-insta">
+        <p class="es seguid-insta">Síganos en <a href="#">Instagram</a> para ver el menú diario en nuestras historias</p>
+        <p class="en seguid-insta">We post our daily menu on our instastories</p>
+      </div>
+    </div>
     <hr class="divisor">
     <h2 class="es" id="grid-item-cartat">Qué comer</h2>
     <h2 class="en" id="grid-item-cartat">What to Eat</h2>
-    <h2 class="ro" id="grid-item-cartat">Platouri</h2>
     <div id="carta">
       <article class="carta-item" id="grid-item-carta0">
         <a nohref onclick="goToSinGluten()" id="glut"><img src="../static/images/gluten.png" alt="sin gluten" class="img-clickable"></a>
         <p2 class="es" id="sing">Sin Gluten</p2>
         <p2 class="en" id="sing">Gluten-Free</p2>
-        <p2 class="ro" id="sing">Făra Gluten</p2>
         <p2 id="celiacos">ACSG</p2>
       </article>
       <article class="carta-item" id="grid-item-carta1">
         <a nohref onclick="goToEntrantes()" id="appet"><img src="../static/images/appetizer.png" alt="entrantes" class="img-clickable"></a>
         <p2 class="es" id="ens">Entrantes y<br>Ensaladas</p2>
         <p2 class="en" id="ens">Starters and<br>Salads</p2>
-        <p2 class="ro" id="ens">Aperitive<br>și Salate</p2>
       </article>
       <article class="carta-item" id="grid-item-carta2">
         <a nohref onclick="goToVeg()" id="ensl"><img src="../static/images/ensalada.png" alt="ensaladas" class="img-clickable"></a>
         <p2 class="es" id="veg">Vegetarianos<br>y Pastas</p2>
         <p2 class="en" id="veg">Vegetarian<br>and Pastas</p2>
-        <p2 class="ro" id="veg">Vegetariene<br>și Paste</p2>
       </article>
       <article class="carta-item" id="grid-item-carta3">
         <a hnohref onclick="goToPizzas()"><img src="../static/images/pizza.png" alt="pizzas" class="img-clickable"></a>
@@ -146,95 +134,68 @@
         <a nohref onclick="goToCarnes()"><img src="../static/images/turkey.png" alt="carnes" class="img-clickable"></a>
         <p2 class="es up-text" id="car">Carnes</p2>
         <p2 class="en up-text" id="car">Meat</p2>
-        <p2 class="ro up-text" id="car">Carne</p2>
       </article>
       <article class="carta-item" id="grid-item-carta5">
         <a nohref onclick="goToPostres()"><img src="../static/images/ice-cream.png" alt="postres" class="img-clickable"></a>
         <p2 class="es up-text" id="post">Postres</p2>
         <p2 class="en up-text" id="post">Desserts</p2>
-        <p2 class="ro up-text" id="post">Desert</p2>
       </article>
     </div>
-    <div id="diario">
-      <div id="menu-y-precio">
-        <h3 class="es diario-h">Menú diario</h3>
-        <h3 class="en diario-h">Daily Menu</h3>
-        <h3 class="ro diario-h">Meniul zilei</h3>
-        <p id="precio-menu">11,50€</p>
-      </div>
-      <div id="link-insta">
-        <p class="es seguid-insta">Síganos en <a href="#">Instagram</a> para ver el menú diario en nuestras historias</p>
-        <p class="en seguid-insta">We post our daily menu on our instastories</p>
-        <p class="ro seguid-insta"></p>
-      </div>
-    </div>
+
   </section>
   <section class="sect  ">
     <hr class="divisor">
     <div id="reserva-sect">
       <h2 class="grid-item1 es" id="reserva-tit">Reservar por internet</h2>
       <h2 class="grid-item1 en" id="reserva-tit">Book Online</h2>
-      <h2 class="grid-item1 ro" id="reserva-tit">Rezervare pe internet</h2>
       <article class="grid-item2" id="form">
         <form id="form-reserva">
           <fieldset class="form-field">
             <label id="nombre">
               <p class="es">Nombre</p>
               <p class="en">Name</p>
-              <p class="ro">Nume</p>
             </label>
             <input type="text" name="nombre" id="nombre1">
             <p3 class="error" id="no-nombre-es">* este campo es obligatorio</p3>
             <p3 class="error" id="mal-nombre-es">* nombre invalido</p3>
             <p3 class="error" id="no-nombre-en">* this input is necessary</p3>
             <p3 class="error" id="mal-nombre-en">* invalid name format</p3>
-            <p3 class="error" id="no-nombre-ro">* informație necesară</p3>
-            <p3 class="error" id="mal-nombre-ro">* numele nu este valid</p3>
           </fieldset>
           <fieldset class="form-field">
             <label id="tellab">
               <p class="es">Teléfono</p>
               <p class="en">Phone Number</p>
-              <p class="ro">Telefon</p>
             </label>
             <input type="tel" name="tel" id="tel1">
             <p3 class="error" id="no-tel-es">* este campo es obligatorio</p3>
             <p3 class="error" id="mal-tel-es">* teléfono invalido</p3>
             <p3 class="error" id="no-tel-en">* this input is necessary</p3>
             <p3 class="error" id="mal-tel-en">* invalid phone number</p3>
-            <p3 class="error" id="no-tel-ro">* informație necesară</p3>
-            <p3 class="error" id="mal-tel-ro">* numărul de telefon nu este valid</p3>
           </fieldset>
           <fieldset class="form-field">
             <label id="fechalab">
               <p class="es">Fecha</p>
               <p class="en">Date</p>
-              <p class="ro">Dată</p>
             </label>
             <input type="date" name="fecha" id="fecha1">
             <p3 class="error" id="no-fecha-es">* este campo es obligatorio</p3>
-            <p3 class="error" id="no-fecha-ro">* informație necesară</p3>
             <p3 class="error" id="no-fecha-en">* this input is necessary</p3>
           </fieldset>
           <fieldset class="form-field">
             <label id="horalab">
               <p class="es">Hora</p>
               <p class="en">Time</p>
-              <p class="ro">Oră</p>
             </label>
             <input type="time" name="hora" id="hora1" value=13:00>
             <p3 class="error" id="no-hora-es">* este campo es obligatorio</p3>
             <p3 class="error" id="no-hora-en">* this input is necessary</p3>
-            <p3 class="error" id="no-hora-ro">* informație necesară</p3>
             <p3 class="error" id="mal-hora-es">* hora fuera de horario, tenga en cuenta que debe llegar mínimo 1 hora antes del cierre</p3>
             <p3 class="error" id="mal-hora-en">* selected time is out of schedule, remember to book a minimum of 1 hour before closing hour<p3>
-            <p3 class="error" id="mal-hora-ro">* nu se pot face rezervari cu 1 oră înaintea orei de închidere</p3>
           </fieldset>
           <fieldset class="form-field">
             <label id="personaslab">
               <p class="es">Personas</p>
               <p class="en">Number of people</p>
-              <p class="ro">Număr de persoane</p>
             </label>
             <input type="number" name="personas" id="persona1" value=1 min=1 max= 30>
           </fieldset>
@@ -242,18 +203,15 @@
             <label id="acept" class="control control-checkbox">
               <p class="es">acepto y estoy de acuerdo con nuestra <a href="privacidad.html es" id="privacidad">política de privacidad</a></p>
               <p class="en">I accept and agree with<br>the <a href="privacidad.html en" id="privacidad">privacy policy</a></p>
-              <p class="ro">sunt de acord cu<br><a href="privacidad.html en" id="privacidad">politica de confidențialitate</a></p>
                    <input type="checkbox" name="politica" id="checkbox" />
                <div class="control_indicator"></div>
            </label>
             <p3 class="error" id="no-politica-es">* es obligatorio aceptar nuestra política de privacidad</p3>
             <p3 class="error" id="no-politica-en">* you must accept our privacy policy</p3>
-            <p3 class="error" id="no-politica-ro">* este necesar să fiți de acord cu politica de confidențialitate</p3>
           </fieldset>
           <button type="submit" id="submit1" name="submit1">
             <p class="es">Reservar</p>
             <p class="en">Send Booking</p>
-            <p class="ro">Confirmare</p>
           </button>
         </form>
       </article>
@@ -302,35 +260,12 @@
             </div>
           </article>
         </div>
-        <div class="ro" id="horario-in">
-          <h3 id="horario-titulo">Horariu</h3>
-          <h4 id="lun-jue">De Luni pănă Joi</h4>
-          <p>13:00 - 16:30<br>19:30 - 00:00</p>
-          <hr>
-          <h4 id="findes">Vineri, Sâmbătă și Sărbători</h4>
-          <p>13:00 - 2:00</p>
-          <hr>
-          <h4 id="findes">Duminică</h4>
-          <p>13:00 - 16:30</p>
-          <br>
-          <article class="grid-horario">
-            <div class="grid-item-horario1">
-                <h4 id="call">Sunați-ne la: </h4>
-              <a class="tel" href="tel:+34913694391">913 69 43 91</a>
-            </div>
-            <div class="grid-item-horario2">
-              <h4 id="emaill">Sau scrieți-ne la: </h4>
-              <a class="tel" href="mailto:farfallamadrid2@gmail.com">farfallamadrid2@gmail.com</a>
-            </div>
-          </article>
-        </div>
       </article>
     </div>
   </section>
   <footer class="localizacion  ">
     <h3 class="es" id="local">Dónde estamos</h3>
     <h3 class="en" id="local">Our location</h3>
-    <h3 class="ro" id="local">Unde suntem</h3>
     <div class="mapouter">
       <iframe class="gmap_canvas" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Calle%20Huertas%206,%20madrid+(Mi%20nombre%20de%20egocios)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="300" frameborder="0"></iframe></div>
     </div>
@@ -347,7 +282,6 @@
         </div>
         <a id="priva-fn" class="priv-final es" href="privacidad.html">política de privacidad</a>
         <a id="priva-fn" class="priv-final en" href="privacidad.html">privacy policy</a>
-        <a id="priva-fn" class="priv-final ro" href="privacidad.html">politică de confidențialitate</a>
       </div>
     </div>
 

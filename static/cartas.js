@@ -17,8 +17,46 @@ $(document).ready(function(){
     $('#'+lookat).click()
     setCookie("lookat", "", 1)
   }
+
+  $("#cambio-carta-sing").click(function() {glutenButton();} )
+  $("#boton-volver-inicio").click(function() {window.location.href = "../templates/home.html";} )
+
 })
 
+let glutens = document.getElementsByClassName('gluten')
+let sings = document.getElementsByClassName('sing')
+function changeGluten() {
+  var gluten = getCookie("gluten")
+  if (gluten == 0) {
+    for(var i=0; i<glutens.length; i++){
+      glutens[i].style.display = "none";
+    }
+    for(var i=0; i<sings.length; i++){
+      sings[i].style.display = "block";
+    }
+  }
+  else if (gluten == 1) {
+    for(var i=0; i<glutens.length; i++){
+      glutens[i].style.display = "block";
+    }
+    for(var i=0; i<sings.length; i++){
+      sings[i].style.display = "none";
+    }
+  }
+}
+
+changeGluten();
+
+function glutenButton() {
+  let gluten = getCookie("gluten")
+  if (gluten == 0) {
+    setCookie("gluten", "1", 10);
+  }
+  else if (gluten == 1) {
+    setCookie("gluten", "0", 10);
+  }
+  changeGluten();
+}
 
 function getCookie(cname) {
   let name = cname + "=";

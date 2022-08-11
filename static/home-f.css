@@ -1,6 +1,7 @@
 #reservaHecha {
   width: 80vw;
   height: 40vh;
+  display: none;
 }
 
 #botones-popup {
@@ -100,10 +101,14 @@
   padding-bottom: 0px;
 }
 
+#divisor_menu {
+  margin-top: 10px;
+}
+
 #menu-y-precio {
   display: flex;
   flex-direction: column;
-  margin-top: 30px
+  padding-top: 30px
 }
 
 #precio-menu {

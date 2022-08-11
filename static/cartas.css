@@ -14,20 +14,32 @@
 
 h3 {
   text-align: center;
+  font-size: 24px;
+  line-height: 30px
+}
+
+.sing {
+  display: none
+}
+
+.foto-tipo {
+  width: 60%;
 }
 
 .titulo-carta {
-  width: 100%;
+  width: 80%;
   background-color: rgba(0,0,0,0.05);
   border: 2px;
-  margin: 10px auto 0px;
+  padding: 10px 0px;
+  margin: 20px auto 0px;
   box-shadow: -2px 3px 4px 3px rgba(0, 0, 0, 0.1);
-
+  border-radius: 7px
 }
 
 .carta-dropdown {
   display: flex;
   flex-direction: column;
+  height: 48%
 }
 
 .texto-carta {
@@ -60,12 +72,18 @@ h4 {
   margin-bottom: 15px;
 }
 
-#foto-postre, #foto-pizza {
-  margin-top: 20px
-}
-
 #ultimo-dropdown {
   padding-bottom: 20px
+}
+
+.texto-carta p {
+  margin: 20px auto auto auto;
+  width: 90%;
+}
+
+.texto-carta p a {
+  font-style: italic;
+  text-decoration: underline;
 }
 
 
@@ -73,10 +91,9 @@ h4 {
   #todo {
     display: grid;
     grid-template-areas:
-    'left1 right1'
-    'left2 right2'
-    'left3 right3';
-    grid-template-columns: 50% 50%;
+    'left1 mid1 right1'
+    'left2 mid2 right2';
+    grid-template-columns: 33% 33% 33%;
     width: 90%;
     height: 100%
   }
@@ -87,5 +104,21 @@ h4 {
 
   .carta-dropdown {
     width: 90%
+  }
+
+  .texto-carta p {
+    margin: 20px auto auto auto;
+    width: 80%;
+    font-size: 16px;
+    line-height: 18px !important;
+  }
+
+  .texto-carta p a {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  #texto-pizzas {
+    margin-bottom: 80px
   }
 }

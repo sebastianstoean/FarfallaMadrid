@@ -11,45 +11,35 @@
   </head>
   <header>
     <nav id="header-nav">
-      <ul class="dropdown">
-        <li id="cambio-idiomas">
-          <a href="#">
-            <button type="button" name="button" id="boton-cambio-idioma">
-              <img id="foto-idioma" src="/static/images/world-map-2.png" alt="">
-            </button>
-          </a>
-          <ul id="lista-idiomas">
-            <li><a id="espanol-boton">Español</a></li>
-            <li><a id="ingles-boton">English</a></li>
-            <li><a id="rumano-boton">Română</a></li>
-          </ul>
-        </li>
-      </ul>
+      <div id="div-idioma">
+        <img src="/static/images/world-button.png" alt="cambiar idioma" id="foto-idioma">
+        <button type="button" name="cambiar_idioma" id="boton-cambio-idioma">English</button>
+      </div>
       <ul id="header-list">
         <li class="boton-nav boton-nav-peque">
           <a id="home-nav" href="home.html">Home</a>
         </li>
         <li class="boton-nav boton-nav-peque" id="carta-boton">
-          <a class="es" href="cartas.html">Carta</a>
-          <a class="en" href="cartas.html">Menu</a>
-          <a class="ro" href="cartas.html">Meniu</a>
+          <a class="es" id="boton-nav-carta">Carta</a>
+          <a class="en" id="boton-nav-carta">Menu</a>
         </li>
         <li class="boton-nav boton-nav-grande" id="carta-sin-boton">
-          <a class="es" href="cartasing.html">Carta Sin Gluten</a>
-          <a class="en" href="cartasing.html">Gluten-free Menu</a>
-          <a class="ro" href="cartasing.html">Meniu Fără Gluten</a>
+          <a class="es" id="boton-nav-sing">Carta Sin Gluten</a>
+          <a class="en" id="boton-nav-sing">Gluten-free Menu</a>
         </li>
         <li class="boton-nav" id="reservar-boton">
           <a class="es">Reservar</a>
           <a class="en">Book a Table</a>
-          <a class="ro">Rezervare</a>
         </li>
         <li class="boton-nav boton-nav-grande" id="about-boton">
           <a class="es">Sobre nosotros</a>
           <a class="en">About us</a>
-          <a class="ro">Despre noi</a>
         </li>
       </ul>
+      <div id="div-home">
+        <img src="/static/images/home.png" alt="volver a inicio" id="foto-casa">
+        <button type="button" name="volver_inicio" id="boton-volver-inicio">Inicio</button>
+      </div>
     </nav>
   </header>
   <body>
@@ -61,12 +51,14 @@
       <h1 id="titulo-pagina">Il Piccolino della Farfalla</h1>
       <h2 class="es subtitulo">Carta</h2>
       <h2 class="en subtitulo">Menu</h2>
-      <h2 class="ro subtitulo">Meniu</h2>
       <nav id="botones-tit" class="botones">
-        <button type="button" id="cartasinb-menu" onclick="goToSinGluten()">
+        <button type="button" class="gluten" onclick="glutenButton()">
           <p class="es">Sin Gluten</p>
           <p class="en">Gluten-Free</p>
-          <p class="ro">Făr Gluten</p>
+        </button>
+        <button type="button" class="sing" onclick="glutenButton()">
+          <p class="es">Con Gluten</p>
+          <p class="en">With Gluten</p>
         </button>
       </nav>
     </section>
@@ -75,66 +67,85 @@
         <div id="col1">
           <article class="carta-dropdown">
             <button type="button" name="button" class="titulo-carta" id="boton-entrantes">
-              <h3>Entrantes y Ensaladas</h3>
+              <img src="../static/images/foto-entrante.png" alt="Berenjenas gratinadas" class="foto-tipo">
+              <h3 class="es">Entrantes y Ensaladas</h3>
             </button>
             <article class="texto-carta" id="carta-entrantes">
-              <h4>Entrantes</h4>
-              <img src="../static/images/foto-entrante.png" alt="Berenjenas gratinadas">
-              <p class="nombre-foto">Berenjenas gratinadas</p>
-              <p class="gluten">Mejillones al vapor y emulsión de tomate<br>8,50€<br class="br-grande">
-                Porción de tarta de cebolla o de setas y puerro<br>4,15€<br class="br-grande">
-                Porción de berenjena de la abuela gratinada con tomate y queso<br>4,15€<br class="br-grande">
-                Chorizo de León al horno con vino<br>5,50€<br class="br-grande">
-                Gazpacho casero<br>4,25€<br class="br-grande">
-                Caldo espesito casero de verduras y carne<br>4,25€<br class="br-grande">
-                Sopa de cebolla<br>6,10€<br class="br-grande">
-                Empanadas chilenas de carne<br>4,10€<br class="br-grande">
-                Papa rellena de carne o queso<br>4,00€<br class="br-grande">
+              <h4 class="es">Entrantes</h4>
+              <p class="gluten es">Mejillones al vapor y emulsión de tomate<br>8,50€<br class="br-grande">
+                Porción de tarta de cebolla o de setas y puerro<br>4,35€<br class="br-grande">
+                Porción de berenjena de la abuela gratinada con tomate y queso<br>4,35€<br class="br-grande">
+                Chorizo de León al horno con vino<br>6,20€<br class="br-grande">
+                Gazpacho casero<br>6,05€<br class="br-grande">
+                Caldo espesito casero de verduras y carne<br>5,25€<br class="br-grande">
+                Sopa de cebolla<br>7,20€<br class="br-grande">
+                Empanadas chilenas de carne<br>5,10€<br class="br-grande">
+                Papa rellena de carne o queso<br>5,10€<br class="br-grande">
+              </p>
+              <p class="sing es">
+                Mejillones al vapor y emulsión de tomate												<br>												8,50€<br class="br-grande">
+                Porción de berenjena gratinada con tomate y queso								<br>									4,35€<br class="br-grande">
+                Chorizo de León al horno con vino																<br>												6,20€<br class="br-grande">
+                Caldo espesito casero de verduras y carne (solo en invierno)		<br>										5,25€<br class="br-grande">
+                Sopa de cebolla (solo en invierno)															<br>													7,20€<br class="br-grande">
               </p>
             </article>
             <article class="texto-carta" id="carta-ensaladas">
-              <h4>Ensaladas</h4>
-              <img src="../static/images/foto-ensalada.png" alt="Ensalada">
-              <p class="nombre-foto">Ensalada Caprese</p>
-              <p class="gluten">Baby: espinacas, mezclum, queso cabra, cebolleta, frutos secos<br>6,25€<br class="br-grande">
-                Caprese: tomate, mozzarella búfala y pesto<br>6,25€<br class="br-grande">
-                Mixta: mezclum, tomate, bonito y cebolla<br>5,95€<br class="br-grande">
-                Blanca: mezclum, apio, manzana, nueces, salsa roquefort<br>5,95€<br class="br-grande">
-                De la casa: mezclum, pollo frito, picatostes, manzana	y salsa de la casa<br>5,95€<br class="br-grande">
-                Colorida: remolacha, patata, zanahoria, huevo duro y salsa de la casa<br>5,95€<br class="br-grande">
-                Especial:
+              <h4 class="es">Ensaladas</h4>
+              <p class="gluten es">Baby: espinacas, mezclum, queso cabra, cebolleta, frutos secos<br>6,75€<br class="br-grande">
+                Caprese: tomate, mozzarella búfala y pesto<br>6,75€<br class="br-grande">
+                Mixta: mezclum, tomate, bonito y cebolla<br>6,75€<br class="br-grande">
+                Blanca: mezclum, apio, manzana, nueces, salsa roquefort<br>6,65€<br class="br-grande">
+                De la casa: mezclum, pollo frito, picatostes, manzana	y salsa de la casa<br>6,65€<br class="br-grande">
+                Colorida: remolacha, patata, zanahoria, huevo duro y salsa de la casa<br>6,65€<br class="br-grande">
+                Especial: mezclum, barritas de cangrejo y espárragos blancos<br>6,65€<br class="br-grande">
+              </p>
+              <p class="sing es">
+                Baby: espinacas, lechugas, queso de cabra, cebolleta, frutos secos				<br>					6,75€<br class="br-grande">
+                Caprese: tomate, mozzarella búfala y pesto																<br>						6,75€<br class="br-grande">
+                Mixta: lechugas coloridas, tomate, bonito y cebolla 											<br>							6,75€<br class="br-grande">
+                Blanca: lechuga, apio, manzana, nueces, salsa roquefort										<br>					6,65€<br class="br-grande">
+                Colorida: remolacha, patata, zanahoria, huevo duro												<br>				6,65€<br class="br-grande">
+                Especial: lechuga, barritas de cangrejo y espárragos blancos							<br>			6,65€<br class="br-grande">
+              </p>
             </article>
           </article>
           <article class="carta-dropdown">
             <button type="button" name="button" class="titulo-carta" id="boton-veg">
-              <h3>Vegetarianos y Pastas</h3>
+              <img src="../static/images/foto-pastas.png" alt="" class="foto-tipo">
+              <h3 class="es">Vegetarianos y Pastas</h3>
             </button>
             <article class="texto-carta" id="carta-vegetariano">
-              <h4>Vegetarianos</h4>
-              <img src="../static/images/foto-vegetariano.png" alt="">
-              <p class="nombre-foto">Arroz integral con verduras y tofu</p>
-              <p class="gluten">Lasaña de verduras frescas<br>9,10€<br class="br-grande">
-                Berenjenas de la abuela gratinadas con tomate y queso<br>8,50€<br class="br-grande">
-                Tarta de cebolla/ espinacas (entera)<br>12,50€<br class="br-grande">
+              <h4 class="es">Vegetarianos</h4>
+              <p class="gluten es">Lasaña de verduras frescas<br>10,15€<br class="br-grande">
+                Berenjenas de la abuela gratinadas con tomate y queso<br>9,50€<br class="br-grande">
+                Tarta de cebolla/ espinacas (entera)<br>13,50€<br class="br-grande">
                 Arroz integral con verduras y tofu<br>8,50€<br class="br-grande">
-                Hamburguesa vegetal de quorn<br>9,50€<br class="br-grande">
-                Hamburguesa vegana<br>9,00€<br class="br-grande">
+                Hamburguesa vegetal de quorn<br>10,15€<br class="br-grande">
+                Hamburguesa vegana<br>10,25€<br class="br-grande">
+              </p>
+              <p class="sing es">
+                Hamburguesa vegana																							<br>											     10,25€<br class="br-grande">
+                Arroz integral con verduras y tofu															<br>													9,50€<br class="br-grande">
+                Berenjenas gratinadas con tomate y queso												<br>											9,50€<br class="br-grande">
+                Tarta de cebolla o de setas y puerro (entera)										<br>										13,50€<br class="br-grande">
+                Risotto de champiñones y gambas																	<br>										10,50€<br class="br-grande">
               </p>
             </article>
             <article class="texto-carta" id="carta-vegetariano">
-              <h3>Pastas</h3>
-              <img src="../static/images/foto-pastas.png" alt="">
-              <p class="nombre-foto">Espaguetis con salsa Boloñesa</p>
-              <p class="gluten">Canelones de espinacas, champiñones y nueces<br>8,50€<br class="br-grande">
-                Spaghetti con salsa a elegir<br>8,35€<br class="br-grande">
-                Gnocchi de patata con salsa<br>8,50€<br class="br-grande">
-                Ravioli de espinacas y requesón con salsa<br>8,50€<br class="br-grande">
-                Sorrentinos de jamón y requesón con salsa<br>8,50€<br class="br-grande">
-                Risotto de champiñones y gambas<br>9,10€<br class="br-grande">
-                Lasaña de carne<br>8,90€<br class="br-grande">
+              <h3 class="gluten es">Pastas</h3>
+              <p class="gluten es">Canelones de espinacas, champiñones y nueces<br>10,15€<br class="br-grande">
+                Spaghetti con salsa a elegir<br>8,95€<br class="br-grande">
+                Gnocchi de patata con salsa<br>9,10€<br class="br-grande">
+                Ravioli de espinacas y requesón con salsa<br>9,10€<br class="br-grande">
+                Sorrentinos de jamón y requesón con salsa<br>9,10€<br class="br-grande">
+                Risotto de champiñones y gambas<br>10,50€<br class="br-grande">
+                Lasaña de carne<br>9,95€<br class="br-grande">
               </p>
-              <h3 class="gluten" id="salsa-tit">Salsas</h3>
-              <p class="gluten">Carbonara: nata, huevo y beicon<br class="br-grande">
+              <h3 class="gluten es" id="salsa-tit">Salsas</h3>
+              <h3 class="sing es" id="salsa-tit">Espaguetis con salsa</h3>
+              <p class="sing">8,95€</p>
+              <p class="es">Carbonara: nata, huevo y beicon<br class="br-grande">
                 Pesto: albahaca, ajo y nueces<br class="br-grande">
                 Arrabbiata: tomate y guindilla<br class="br-grande">
                 Boloñesa: tomate y carne picada<br class="br-grande">
@@ -144,112 +155,170 @@
               </p>
             </article>
           </article>
+        </div>
+        <div id="col2">
           <article class="carta-dropdown">
             <button type="button" name="button" class="titulo-carta" id="boton-pizz">
-              <h3>Nuestras Pizzas</h3>
+              <img src="../static/images/foto-pizza.png" id="foto-pizza" alt="" class="foto-tipo">
+              <h3 class="es">Nuestras Pizzas</h3>
             </button>
             <article class="texto-carta" id="carta-pizzas">
-              <img src="../static/images/foto-pizza.png" id="foto-pizza" alt="">
-              <p class="nombre-foto">Pizza vegetal</p>
-              <p class="gluten">Margarita: mozzarella, tomate y orégano<br>7,05€<br class="br-grande">
-                Caprichosa: jamón<br>7,75€<br class="br-grande">
-                Funghi: champiñones<br>7,75€<br class="br-grande">
-                Exquisita: tomate en rodajas y ajo<br>7,75€<br class="br-grande">
-                Vegetal: maíz, champiñones y pimientos<br>7,75€<br class="br-grande">
-                Napolitana: anchoas y alcaparras<br>7,85€<br class="br-grande">
-                Erótica: roquefort, apio y nueces<br>7,85€<br class="br-grande">
-                Cuatro quesos<br>7,85€<br class="br-grande">
-                Hawaiana: piña y jamón<br>7,85€<br class="br-grande">
-                Especial: beicon, cebolla y champiñones<br>7,85€<br class="br-grande">
-                Carnosa: carne animal o vegetal de quorn<br>7,85€<br class="br-grande">
-                Mediterránea: atún<br>7,85€<br class="br-grande">
-                Castellana: chorizo o salami<br>7,85€<br class="br-grande">
+              <p class="gluten es" id="texto-pizzas">Margarita: mozzarella, tomate y orégano<br>7,95€<br class="br-grande">
+                Caprichosa: jamón<br>8,30€<br class="br-grande">
+                Funghi: champiñones<br>8,30€<br class="br-grande">
+                Exquisita: tomate en rodajas y ajo<br>8,30€<br class="br-grande">
+                Vegetal: maíz, champiñones y pimientos<br>8,30€<br class="br-grande">
+                Napolitana: anchoas y alcaparras<br>8,30€<br class="br-grande">
+                Erótica: roquefort, apio y nueces<br>8,30€<br class="br-grande">
+                Cuatro quesos<br>8,30€<br class="br-grande">
+                Hawaiana: piña y jamón<br>8,30€<br class="br-grande">
+                Especial: beicon, cebolla y champiñones<br>8,30€<br class="br-grande">
+                Carnosa: carne animal o vegetal de quorn<br>8,30€<br class="br-grande">
+                Mediterránea: atún<br>8,30€<br class="br-grande">
+                Castellana: chorizo o salami<br>8,30€<br class="br-grande">
+                *Hazla tú mismo: base margarita + 2 ingredientes de otras pizzas<br>8,70€<br class="br-grande">
+                *Hazla vegana: cambia la mozzarella por queso vegano<br>+0,80€<br class="br-grande">
+                *Hazla sin gluten: cualquiera de nuestras pizzas<br>Mirar la <a id="cambio-carta-sing">carta sin gluten</a> <br class="br-grande">
+              </p>
+              <p class="sing es">
+                Margarita: mozzarella, tomate y orégano									<br>														8,50€<br class="br-grande">
+                Caprichosa: jamón																				<br>																	8,90€<br class="br-grande">
+                Funghi: champiñones																			<br>																8,90€<br class="br-grande">
+                Kokido: pollo																					  <br>																				8,90€<br class="br-grande">
+                Exquisita: tomate en rodajas y ajo											<br>																8,90€<br class="br-grande">
+                Vegetal: maíz, champiñones y pimientos									<br>															8,90€<br class="br-grande">
+                Napolitana: anchoas y alcaparras												<br>															8,90€<br class="br-grande">
+                Erótica: roquefort, apio y nueces												<br>																8,90€<br class="br-grande">
+                Cuatro quesos: 																					<br>																		8,90€<br class="br-grande">
+                Hawaiana: piña y jamón																	<br>																8,90€<br class="br-grande">
+                Especial: beicon, cebolla y champiñones									<br>															8,90€<br class="br-grande">
+                Carnosa: carne 																					<br>																		8,90€<br class="br-grande">
+                Mediterránea: atún																			<br>																	8,90€<br class="br-grande">
+                Castellana: chorizo, salami o bacon											<br>																8,90€<br class="br-grande">
+                Picantona: pepperoni y pimienta 												<br>																8,90€<br class="br-grande">
                 <br>
-                Hazla tú mismo: base margarita + 2 ingredientes de otras pizzas<br>8,10€<br class="br-grande">
-                Hazla vegana: cambia la mozzarella por queso vegano<br>+0,80€<br class="br-grande">
-                Hazla sin gluten: cualquiera de nuestras pizzas<br>+0,80€<br class="br-grande">
+                *Hazla tú mismo: base margarita + 2 ingredientes  de otras pizzas	<br>					9,50€<br class="br-grande">
+                *Hazla para tí: cambia la mozzarella por queso vegano o sin lactosa<br>				+0,80€<br class="br-grande">
+              </p>
+            </article>
+          </article>
+          <article class="carta-dropdown">
+            <button type="button" name="button" class="titulo-carta" id="boton-carnes">
+              <img src="../static/images/foto-parrilla.png" alt="" class="foto-tipo">
+              <h3 class="es">Carnes y Pescados</h3>
+            </button>
+            <article class="gluten texto-carta" id="carta-pescados">
+              <h4 class="es">Pescados</h4>
+              <p class="gluten es">Bacalao a la vizcaína<br>14,50€<br class="br-grande">
+                Salmón a la plancha<br>12,80€<br class="br-grande">
+              </p>
+            </article>
+            <article class="texto-carta" id="carta-carnes">
+              <h4 class="es">Parrilla de Carbón</h4>
+              <p class="es">Asado de tira<br>12,50€<br class="br-grande">
+                Vacío<br>13,50€<br class="br-grande">
+                Entraña<br>13,50€<br class="br-grande">
+                Entrecot<br>14,50€<br class="br-grande">
+                Parrillada para dos personas<br>26,00€<br class="br-grande">
+              </p>
+            </article>
+            <article class="texto-carta" id="carta-otras-carnes">
+              <h4 class="es">Otras Carnes</h4>
+              <p class="gluten es">Pollo de corral al curry con leche de coco y guarnición<br>11,30€<br class="br-grande">
+                Escalope de ternera napolitano<br>11,75€<br class="br-grande">
+                Escalope de pollo<br>9,50€<br class="br-grande">
+                Escalope de pollo gratinado con tomate y queso<br>11,50€<br class="br-grande">
+                Carrillada de ternera<br>13,50€<br class="br-grande">
+                Hamburguesa de Kobe	(opción de pan sin gluten)<br>12,95<br class="br-grande">
+              </p>
+              <p class="sing es">
+                Pollo de corral al curry con leche de coco y guarnición					<br>									11,30€<br class="br-grande">
+                Carrillada de ternera																						<br>												13,50€<br class="br-grande">
+                Hamburguesa de Kobe																							<br>										12,95€<br class="br-grande">
               </p>
             </article>
           </article>
         </div>
-        <div id="col2">
-          <article class="carta-dropdown">
-            <button type="button" name="button" class="titulo-carta" id="boton-carnes">
-              <h3>Carnes y Pescados</h3>
-            </button>
-            <article class="gluten texto-carta" id="carta-pescados">
-              <h4>Pescados</h4>
-              <img src="../static/images/foto-pescado.png" alt="">
-              <p class="nombre-foto">Salmón a la plancha</p>
-              <p class="gluten">Bacalao a la vizcaína<br>14,00€<br class="br-grande">
-                Salmón a la plancha<br>11,50€<br class="br-grande">
-              </p>
-            </article>
-            <article class="texto-carta" id="carta-carnes">
-              <h4>Parrilla de Carbón</h4>
-              <img src="../static/images/foto-parrilla.png" alt="">
-              <p class="nombre-foto">Entraña</p>
-              <p>Asado de tira<br>11,90€<br class="br-grande">
-                Vacío<br>12,95€<br class="br-grande">
-                Entraña<br>12,95€<br class="br-grande">
-                Entrecot<br>13,50€<br class="br-grande">
-                Parrillada para dos personas<br>4,50€<br class="br-grande">
-              </p>
-            </article>
-            <article class="texto-carta" id="carta-otras-carnes">
-              <h4>Otras Carnes</h4>
-              <img class="gluten" src="../static/images/foto-carnes.png" alt="">
-              <p class="nombre-foto gluten">Escalope de Ternera Napolitano</p>
-              <p class="gluten">Pollo de corral al curry con leche de coco y guarnición<br>11,30€<br class="br-grande">
-                Escalope de ternera napolitano<br>10,95€<br class="br-grande">
-                Escalope de pollo<br>8,50€<br class="br-grande">
-                Escalope de pollo gratinado con tomate y queso<br>10,25€<br class="br-grande">
-                Carrillada de ternera<br>12,50€<br class="br-grande">
-                Hamburguesa de Kobe	(opción de pan sin gluten)<br>12,50<br class="br-grande">
-              </p>
-            </article>
-          </article>
+        <div id="col3">
           <article class="carta-dropdown">
             <button type="button" name="button" class="titulo-carta" id="boton-postres">
-              <h3>Nuestros Postres</h3>
+              <img id="foto-postre" src="../static/images/foto-postre.png" alt="" class="foto-tipo">
+              <h3 class="es">Nuestros Postres</h3>
             </button>
             <article class="texto-carta" id="carta-postres">
-              <img id="foto-postre" src="../static/images/foto-postre.png" alt="">
-              <p class="nombre-foto">Brownie casero con helado</p>
-              <p class="gluten">Caprichos de dulce de leche<br>4,80€<br class="br-grande">
-                Tarta casera de queso<br>4,60€<br class="br-grande">
-                Strudel de manzana casero con helado<br>4,60€<br class="br-grande">
-                Brownie casero con helado y chocolate caliente (opción sin gluten)<br>4,60€<br class="br-grande">
-                Charlotte: helado de nata con chocolate caliente y nueces<br>4,60€<br class="br-grande">
-                Tiramisú casero<br>4,60€<br class="br-grande">
-                Trufas con nata<br>4,60€<br class="br-grande">
-                Alfajores de maicena con dulce de leche y coco<br>5,10€<br class="br-grande">
-                Tarta sin gluten con crema y chocolate<br>4,60€<br class="br-grande">
+              <p class="gluten es">Caprichos de dulce de leche<br>6,20€<br class="br-grande">
+                Tarta casera de queso al horno (opción sin gluten)<br>4,90€<br class="br-grande">
+                Strudel de manzana casero con helado<br>4,90€<br class="br-grande">
+                Brownie casero con helado y chocolate caliente (opción sin gluten)<br>4,90€<br class="br-grande">
+                Charlotte: helado de nata con chocolate caliente y nueces<br>4,90€<br class="br-grande">
+                Tiramisú casero<br>4,90€<br class="br-grande">
+                Trufas con nata<br>4,90€<br class="br-grande">
+                Alfajores de maicena con dulce de leche y coco<br>6,50€<br class="br-grande">
+              </p>
+              <p class="sing es">
+                Tarta de queso al horno<br> 4,90€<br class="br-grande">
+                Brownie casero con helado y chocolate caliente<br> 4,90€<br class="br-grande">
+                Charlotte: helado de nata con chocolate caliente y nueces<br> 4,90€<br class="br-grande">
+                Trufas de chocolate con nata<br> 4,90€<br class="br-grande">
               </p>
             </article>
           </article>
           <article class="carta-dropdown" id="ultimo-dropdown">
             <button type="button" name="button" class="titulo-carta">
-              <h3>Bebidas</h3>
+              <img id="foto-bebidas" src="../static/images/vino.jpg" alt="" class="foto-tipo">
+              <h3 class="es">Bebidas</h3>
             </button>
             <article class="texto-carta" id="carta-postres">
-              <h4>Vinos</h4>
-              <p>Caprichos de dulce de leche<br>4,80€<br class="br-grande">
-                Tarta casera de queso<br>4,60€<br class="br-grande">
-                Strudel de manzana casero con helado<br>4,60€<br class="br-grande">
-                Brownie casero con helado y chocolate caliente (opción sin gluten)<br>4,60€<br class="br-grande">
-                Charlotte: helado de nata con chocolate caliente y nueces<br>4,60€<br class="br-grande">
-                Tiramisú casero<br>4,60€<br class="br-grande">
-                Trufas con nata<br>4,60€<br class="br-grande">
-                Alfajores de maicena con dulce de leche y coco<br>5,10€<br class="br-grande">
-                Tarta sin gluten con crema y chocolate<br>4,60€<br class="br-grande">
+              <h4 class="es">Vinos</h4>
+              <p class="es"> Albariño														<br>					14,15€<br class="br-grande">
+                  De la casa: Lanchares tempranillo Blanco o Tinto<br>				9,50€<br>Copa 2,85€<br class="br-grande">
+                  Ribera del Duero Tinto												<br>					14,15€<br>Copa 3,20€<br class="br-grande">
+                  Cune Rioja Crianza Tinto											<br>					14,90€<br>Copa 3,60€<br class="br-grande">
+                  ½ Cune Rioja Crianza Tinto										<br>					8,50€<br class="br-grande">
+                  Blanco de Rueda																<br>					13,80€<br>Copa 3,25€<br class="br-grande">
+                  Rosado de Navarra															<br>					12,50€<br>Copa 3,15€<br class="br-grande">
+                  Lambrusco Tinto o Rosado											<br>					9,50€<br class="br-grande">
+                  Jarra de Sangría															<br>					13,50€<br class="br-grande">
+                  Jarra de Tinto de verano											<br>					12,50€<br class="br-grande">
+                  Mateus Rosado																	<br>					13,50€<br class="br-grande">
+                  Freixenet Botella															<br>					17,50€<br class="br-grande">
+                  Freixenet mini																<br>					6,15€<br class="br-grande">
+                  Marqués de Cáceres Rioja Crianza Tinto				<br>					17,50€<br class="br-grande">
+                  Azpilicueta Rioja Crianza Tinto								<br>					14,90€<br class="br-grande">
+                  Ecológico Blanco o Tinto											<br>					18,50€<br>Copa 3,80€<br class="br-grande">
+                  Diamante Rioja Blanco Semidulce								<br>					14,90€<br>Copa 3,60€<br class="br-grande">
               </p>
-              <h4>Otras bebidas</h4>
-              <p>
+              <h4 class="es">Otras bebidas</h4>
+              <p class="gluten es">
+                Tercio					<br>		     		3,25€<br class="br-grande">
+                Pinta						<br>		       	3,50€<br class="br-grande">
+                Copa 						<br>		       	2,75€<br class="br-grande">
+                Maestra					<br>	       		3,60€<br class="br-grande">
+                Sin Gluten 			<br>		  	 		3,60€<br class="br-grande">
+                Ladrón de Manzanas<br>		    	3,00€<br class="br-grande">
+                Tinto de verano <br> 			  		3,20€<br class="br-grande">
+                Refrescos				<br>		     		2,80€<br class="br-grande">
+                Zumos						<br>		       	2,75€<br class="br-grande">
+                Zumo Natural de Naranja<br>	  	3,75€<br class="br-grande">
+                Agua con gas o mineral<br>			1,85€<br class="br-grande">
+                Café						<br>		      	1,80€<br class="br-grande">
+                Té o infusión		<br>						1,80€<br class="br-grande">
+              </p>
+              <p class="sing es">
+                Cerveza Sin Gluten		<br>			3,60€<br class="br-grande">
+                Ladrón de Manzanas		<br>    	3,00€<br class="br-grande">
+                Tinto de verano				<br>	  	3,20€<br class="br-grande">
+                Refresco		        	<br>	  	2,80€<br class="br-grande">
+                Zumo                  <br>    	2,75€<br class="br-grande">
+                Zumo Natural de Naranja<br>			3,75€<br class="br-grande">
+                Agua (mineral o con gas)<br>		1,85€<br class="br-grande">
+                Café                  <br>			1,80€<br class="br-grande">
+                Té o infusión					<br>      1,80€<br class="br-grande">
               </p>
             </article>
           </article>
         </div>
+
 
 
 
